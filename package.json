@@ -1,5 +1,5 @@
 {
-  "name": "nicolás-barceló-portfolio",
+  "name": "nicolas-barcelo-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,9 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "18.2.0",
+    "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "recharts": "2.12.7"
+    "recharts": "^3.6.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
