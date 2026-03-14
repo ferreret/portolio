@@ -1,8 +1,3 @@
-export interface SkillItem {
-  name: string;
-  level: number; // 0-100 for charts
-}
-
 export interface SkillCategory {
   category: string;
   skills: string[];
@@ -55,7 +50,6 @@ export interface AppContent {
   profile: ProfileData;
   experience: ExperienceItem[];
   skillCategories: SkillCategory[];
-  radarSkills: SkillItem[];
   projects: ProjectItem[];
   blog: BlogPost[];
   ui: {
@@ -85,5 +79,15 @@ export interface AppContent {
     yearsExp: string;
     specialist: string;
     copyright: string;
-  }
+    footerTagline: string;
+    skillsSubtitle: string;
+    scrollIndicator: string;
+    allTags: string;
+    noProjectsFound: string;
+    noProjectsFoundPrefix: string;
+    clearFilter: string;
+    builtWith: string;
+    underConstruction: string;
+    underConstructionDesc: string;
+  };
 }

@@ -36,7 +36,17 @@ const enContent: AppContent = {
     available: "Available for new projects",
     yearsExp: "Years Experience",
     specialist: "Automation Specialist",
-    copyright: "All rights reserved."
+    copyright: "All rights reserved.",
+    footerTagline: "Empowering enterprises with intelligent automation, Generative AI, and robust software architecture.",
+    skillsSubtitle: "Technologies and tools I use to bring ideas to life",
+    scrollIndicator: "Scroll",
+    allTags: "All",
+    noProjectsFound: "No projects found with tag",
+    noProjectsFoundPrefix: "",
+    clearFilter: "Clear filter",
+    builtWith: "Built with React & Tailwind",
+    underConstruction: "Under Construction",
+    underConstructionDesc: "This section is being updated with new content. Check back soon!"
   },
   profile: {
     name: "Nicolás Barceló Lozano",
@@ -47,7 +57,7 @@ const enContent: AppContent = {
     summary: `Senior Data Scientist & Software Engineer with 25+ years of experience designing and implementing high-impact solutions across enterprise systems, document management, and process automation. Currently focused on AI Agents, LLM orchestration, and intelligent automation, combining a strong foundation in .NET development with expertise in Python, NLP, and Generative AI. Passionate about rapidly prototyping, testing, and scaling AI systems that enhance decision-making, optimize workflows, and deliver measurable business impact.`,
     education: [
       {
-        degree: "Master’s in AI, Data Science & ML and Big Data",
+        degree: "Master's in AI, Data Science & ML and Big Data",
         institution: "IEBS Business School",
         period: "Nov 2022 - Sept 2023"
       },
@@ -76,7 +86,8 @@ const enContent: AppContent = {
         "Integrated generative AI models through the OpenAI SDK, enabling rapid prototyping and reliable LLM-based automation.",
         "Designed multi-agent orchestration pipelines for real-world use cases (document workflows, healthcare scheduling, CRM integrations).",
         "Led development of document management applications in .NET (C# / WPF / WinForms) and SQL Server.",
-        "Developed content-based text classification (NLP) for knowledge management and directed quality prediction projects using ML models."
+        "Developed content-based text classification (NLP) for knowledge management and directed quality prediction projects using ML models.",
+        "Leveraged agentic coding tools (Claude Code, Gemini CLI, Antigravity) for accelerated software development and AI-assisted prototyping."
       ]
     },
     {
@@ -103,7 +114,7 @@ const enContent: AppContent = {
   skillCategories: [
     {
       category: "AI & Machine Learning",
-      skills: ["LLMs", "Prompt Engineering", "AI Agents", "LangChain", "LangGraph", "CrewAI", "OpenAI SDK", "NLP", "RAG Pipelines", "Scikit-learn", "TensorFlow", "YOLO"]
+      skills: ["LLMs", "Prompt Engineering", "AI Agents", "Agentic Coding", "Claude Code", "Gemini CLI", "Antigravity", "LangChain", "LangGraph", "CrewAI", "OpenAI SDK", "NLP", "RAG Pipelines", "Scikit-learn", "TensorFlow", "YOLO"]
     },
     {
       category: "Software Development",
@@ -117,14 +128,6 @@ const enContent: AppContent = {
       category: "Automation & BI",
       skills: ["RPA Frameworks", "n8n", "REST APIs", "Power BI", "Process Mapping"]
     }
-  ],
-  radarSkills: [
-    { name: 'Generative AI', level: 95 },
-    { name: 'Python', level: 90 },
-    { name: '.NET / C#', level: 95 },
-    { name: 'Data Science', level: 85 },
-    { name: 'Cloud / Azure', level: 80 },
-    { name: 'SQL / Data', level: 90 },
   ],
   projects: [
     enterpriseOrchestrator.en,
@@ -164,7 +167,17 @@ const esContent: AppContent = {
     available: "Disponible para nuevos proyectos",
     yearsExp: "Años de Experiencia",
     specialist: "Especialista en Automatización",
-    copyright: "Todos los derechos reservados."
+    copyright: "Todos los derechos reservados.",
+    footerTagline: "Potenciando empresas con automatización inteligente, IA Generativa y arquitectura de software robusta.",
+    skillsSubtitle: "Tecnologías y herramientas que utilizo para dar vida a las ideas",
+    scrollIndicator: "Desplazar",
+    allTags: "Todos",
+    noProjectsFound: "No se encontraron proyectos con la etiqueta",
+    noProjectsFoundPrefix: "",
+    clearFilter: "Limpiar filtro",
+    builtWith: "Hecho con React y Tailwind",
+    underConstruction: "En construcción",
+    underConstructionDesc: "Esta sección se está actualizando con nuevo contenido. ¡Vuelve pronto!"
   },
   profile: {
     name: "Nicolás Barceló Lozano",
@@ -204,7 +217,8 @@ const esContent: AppContent = {
         "Integración de modelos de IA generativa a través del SDK de OpenAI, permitiendo prototipado rápido y automatización confiable basada en LLMs.",
         "Diseño de pipelines de orquestación multi-agente para casos de uso reales (flujos de trabajo documentales, programación sanitaria, integraciones CRM).",
         "Liderazgo en el desarrollo de aplicaciones de gestión documental en .NET (C# / WPF / WinForms) y SQL Server.",
-        "Desarrollo de clasificación de texto basada en contenido (NLP) para gestión del conocimiento y proyectos de predicción de calidad utilizando modelos de ML."
+        "Desarrollo de clasificación de texto basada en contenido (NLP) para gestión del conocimiento y proyectos de predicción de calidad utilizando modelos de ML.",
+        "Uso de herramientas de programación agéntica (Claude Code, Gemini CLI, Antigravity) para desarrollo acelerado de software y prototipado asistido por IA."
       ]
     },
     {
@@ -231,7 +245,7 @@ const esContent: AppContent = {
   skillCategories: [
     {
       category: "IA y Machine Learning",
-      skills: ["LLMs", "Prompt Engineering", "AI Agents", "LangChain", "LangGraph", "CrewAI", "OpenAI SDK", "NLP", "RAG Pipelines", "Scikit-learn", "TensorFlow", "YOLO"]
+      skills: ["LLMs", "Prompt Engineering", "AI Agents", "Agentic Coding", "Claude Code", "Gemini CLI", "Antigravity", "LangChain", "LangGraph", "CrewAI", "OpenAI SDK", "NLP", "RAG Pipelines", "Scikit-learn", "TensorFlow", "YOLO"]
     },
     {
       category: "Desarrollo de Software",
@@ -245,14 +259,6 @@ const esContent: AppContent = {
       category: "Automatización y BI",
       skills: ["RPA Frameworks", "n8n", "REST APIs", "Power BI", "Mapeo de Procesos"]
     }
-  ],
-  radarSkills: [
-    { name: 'IA Generativa', level: 95 },
-    { name: 'Python', level: 90 },
-    { name: '.NET / C#', level: 95 },
-    { name: 'Data Science', level: 85 },
-    { name: 'Cloud / Azure', level: 80 },
-    { name: 'SQL / Data', level: 90 },
   ],
   projects: [
     enterpriseOrchestrator.es,
