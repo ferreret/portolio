@@ -1,9 +1,7 @@
 import { AppContent } from './types';
 
 // Projects
-import { enterpriseOrchestrator } from './data/projects/enterprise-orchestrator';
-import { documentPlatform } from './data/projects/document-platform';
-import { qualityPredictor } from './data/projects/quality-predictor';
+import { docscanStudio } from './data/projects/docscan-studio';
 
 // Articles
 import { orchestratingAgents } from './data/articles/orchestrating-agents';
@@ -31,6 +29,7 @@ const enContent: AppContent = {
     blogTitle: "Technical Insights",
     blogSubtitle: "Thoughts on AI, automation, and software engineering.",
     backToBlog: "Back to Blog",
+    backToProjects: "Back to Projects",
     readArticle: "Read Article",
     viewDetails: "View Details",
     available: "Available for new projects",
@@ -130,9 +129,7 @@ const enContent: AppContent = {
     }
   ],
   projects: [
-    enterpriseOrchestrator.en,
-    documentPlatform.en,
-    qualityPredictor.en
+    docscanStudio.en
   ],
   blog: [
     orchestratingAgents.en,
@@ -162,6 +159,7 @@ const esContent: AppContent = {
     blogTitle: "Insights Técnicos",
     blogSubtitle: "Reflexiones sobre IA, automatización e ingeniería de software.",
     backToBlog: "Volver al Blog",
+    backToProjects: "Volver a Proyectos",
     readArticle: "Leer Artículo",
     viewDetails: "Ver Detalles",
     available: "Disponible para nuevos proyectos",
@@ -261,9 +259,7 @@ const esContent: AppContent = {
     }
   ],
   projects: [
-    enterpriseOrchestrator.es,
-    documentPlatform.es,
-    qualityPredictor.es
+    docscanStudio.es
   ],
   blog: [
     orchestratingAgents.es,

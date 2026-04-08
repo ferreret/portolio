@@ -18,6 +18,7 @@ export interface ProjectItem {
   tags: string[];
   imageUrl?: string;
   link?: string;
+  content?: string;
 }
 
 export interface BlogPost {
@@ -73,6 +74,7 @@ export interface AppContent {
     blogTitle: string;
     blogSubtitle: string;
     backToBlog: string;
+    backToProjects: string;
     readArticle: string;
     viewDetails: string;
     available: string;

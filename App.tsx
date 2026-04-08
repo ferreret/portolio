@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { content } from './contentData';
-import { BlogPost, AppContent } from './types';
+import { BlogPost, AppContent, ProjectItem } from './types';
 
 // --- Icons ---
 const MenuIcon = () => <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" /></svg>;
@@ -16,6 +16,7 @@ const ArrowLeftIcon = () => <svg xmlns="http://www.w3.org/2000/svg" className="h
 enum ViewState {
   HOME = 'HOME',
   PROJECTS = 'PROJECTS',
+  PROJECT_DETAIL = 'PROJECT_DETAIL',
   BLOG = 'BLOG',
   BLOG_DETAIL = 'BLOG_DETAIL'
 }
@@ -27,13 +28,17 @@ type Theme = 'light' | 'dark';
 const VIEW_PATHS: Record<ViewState, string> = {
   [ViewState.HOME]: '/',
   [ViewState.PROJECTS]: '/projects',
+  [ViewState.PROJECT_DETAIL]: '/projects/',
   [ViewState.BLOG]: '/blog',
   [ViewState.BLOG_DETAIL]: '/blog/',
 };
 
-function viewFromPath(path: string): { view: ViewState; postId?: string } {
+function viewFromPath(path: string): { view: ViewState; postId?: string; projectId?: string } {
   if (path.startsWith('/blog/') && path.length > 6) {
     return { view: ViewState.BLOG_DETAIL, postId: path.slice(6) };
+  }
+  if (path.startsWith('/projects/') && path.length > 10) {
+    return { view: ViewState.PROJECT_DETAIL, projectId: path.slice(10) };
   }
   if (path === '/projects') return { view: ViewState.PROJECTS };
   if (path === '/blog') return { view: ViewState.BLOG };
@@ -106,7 +111,9 @@ const Header: React.FC<HeaderProps> = ({
             key={item.view}
             onClick={() => onNavigate(item.view)}
             className={`px-3 py-1.5 text-sm font-medium transition-colors rounded-md ${
-              view === item.view || (item.view === ViewState.BLOG && view === ViewState.BLOG_DETAIL)
+              view === item.view
+                || (item.view === ViewState.BLOG && view === ViewState.BLOG_DETAIL)
+                || (item.view === ViewState.PROJECTS && view === ViewState.PROJECT_DETAIL)
                 ? 'text-accent-700 dark:text-accent-400'
                 : 'text-warm-500 dark:text-warm-400 hover:text-warm-900 dark:hover:text-warm-100'
             }`}
@@ -247,6 +254,7 @@ const Footer: React.FC<FooterProps> = ({ data, emailCopied, onCopyEmail }) => (
 // --- Projects View ---
 interface ProjectsViewProps {
   data: AppContent;
+  onOpenProject: (project: ProjectItem) => void;
 }
 
 const UnderConstructionNotice: React.FC<{ title: string; data: AppContent }> = ({ title, data }) => (
@@ -272,9 +280,109 @@ const UnderConstructionNotice: React.FC<{ title: string; data: AppContent }> = (
   </div>
 );
 
-const ProjectsView: React.FC<ProjectsViewProps> = ({ data }) => (
-  <UnderConstructionNotice title={data.ui.featuredProjectsTitle} data={data} />
-);
+const ProjectsView: React.FC<ProjectsViewProps> = ({ data, onOpenProject }) => {
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+
+  const allTags = Array.from(new Set(data.projects.flatMap(p => p.tags))).sort();
+  const filteredProjects = selectedTag
+    ? data.projects.filter(p => p.tags.includes(selectedTag))
+    : data.projects;
+
+  const tagButtonClass = (active: boolean) =>
+    `px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+      active
+        ? 'bg-warm-900 dark:bg-warm-50 text-white dark:text-warm-900'
+        : 'bg-warm-100 dark:bg-warm-800 text-warm-600 dark:text-warm-300 hover:bg-warm-200 dark:hover:bg-warm-700'
+    }`;
+
+  return (
+    <div className="pt-28 pb-20 animate-fade-in min-h-screen">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-warm-900 dark:text-warm-50 mb-3">
+            {data.ui.featuredProjectsTitle}
+          </h1>
+          <p className="text-warm-500 dark:text-warm-400 max-w-2xl mx-auto">
+            {data.ui.featuredProjectsSubtitle}
+          </p>
+        </div>
+
+        <div className="mb-10 flex flex-wrap justify-center gap-2">
+          <button
+            onClick={() => setSelectedTag(null)}
+            className={tagButtonClass(selectedTag === null)}
+          >
+            {data.ui.allTags}
+          </button>
+          {allTags.map(tag => (
+            <button
+              key={tag}
+              onClick={() => setSelectedTag(tag === selectedTag ? null : tag)}
+              className={tagButtonClass(selectedTag === tag)}
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
+
+        {filteredProjects.length > 0 ? (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredProjects.map(project => (
+              <article
+                key={project.id}
+                onClick={() => onOpenProject(project)}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpenProject(project); } }}
+                role="link"
+                tabIndex={0}
+                className="group bg-warm-50 dark:bg-warm-800 rounded-xl overflow-hidden border border-warm-200 dark:border-warm-700 hover:border-accent-300 dark:hover:border-accent-700 transition-all duration-300 hover:shadow-lg flex flex-col cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent-500"
+              >
+                <div className="h-48 overflow-hidden bg-warm-100 dark:bg-warm-700">
+                  <img src={project.imageUrl} alt={project.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="p-5 flex-1 flex flex-col">
+                  <h3 className="font-serif text-lg font-semibold text-warm-900 dark:text-warm-50 mb-2 group-hover:text-accent-700 dark:group-hover:text-accent-400 transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-warm-500 dark:text-warm-400 mb-4 flex-1 line-clamp-3 text-sm leading-relaxed">{project.description}</p>
+                  <div className="flex flex-wrap gap-1.5 mt-auto">
+                    {project.tags.map(tag => (
+                      <button
+                        key={tag}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedTag(tag === selectedTag ? null : tag);
+                        }}
+                        className={`text-xs px-2.5 py-1 rounded-full transition-colors ${
+                          selectedTag === tag
+                            ? 'bg-accent-600 text-white'
+                            : 'bg-warm-100 dark:bg-warm-700 text-warm-500 dark:text-warm-400 hover:bg-accent-100 dark:hover:bg-accent-900/30 hover:text-accent-700 dark:hover:text-accent-400'
+                        }`}
+                      >
+                        {tag}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-16">
+            <p className="text-warm-500 dark:text-warm-400 mb-4">
+              {data.ui.noProjectsFound} <strong className="text-accent-600 dark:text-accent-400">{selectedTag}</strong>
+            </p>
+            <button
+              onClick={() => setSelectedTag(null)}
+              className="text-accent-600 dark:text-accent-400 font-medium hover:underline"
+            >
+              {data.ui.clearFilter}
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
 
 // --- Home View ---
 interface HomeViewProps {
@@ -527,6 +635,46 @@ const BlogView: React.FC<BlogViewProps> = ({ data }) => (
 );
 
 // --- Blog Post Detail ---
+interface ProjectDetailProps {
+  project: ProjectItem;
+  data: AppContent;
+  onBack: () => void;
+}
+
+const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, data, onBack }) => (
+  <div className="pt-24 pb-20 animate-fade-in min-h-screen bg-white dark:bg-warm-900 transition-colors duration-300">
+    <div className="max-w-3xl mx-auto px-6 lg:px-8">
+      <button onClick={onBack} className="mt-8 mb-8 flex items-center gap-2 text-warm-400 hover:text-accent-600 dark:hover:text-accent-400 transition-colors text-sm">
+        <ArrowLeftIcon />
+        {data.ui.backToProjects}
+      </button>
+
+      {project.imageUrl && (
+        <div className="rounded-xl overflow-hidden border border-warm-200 dark:border-warm-800 mb-10">
+          <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-cover" />
+        </div>
+      )}
+
+      <header className="mb-10">
+        <div className="flex flex-wrap gap-2 mb-4">
+          {project.tags.map(tag => (
+            <span key={tag} className="text-xs font-semibold tracking-wider uppercase text-accent-600 dark:text-accent-400">{tag}</span>
+          ))}
+        </div>
+        <h1 className="font-serif text-3xl md:text-5xl font-bold text-warm-900 dark:text-warm-50 mb-6 leading-tight">{project.title}</h1>
+        <p className="text-lg text-warm-500 dark:text-warm-400 leading-relaxed border-b border-warm-100 dark:border-warm-800 pb-8">{project.description}</p>
+      </header>
+
+      {project.content && (
+        <div
+          className="prose prose-stone dark:prose-invert prose-lg max-w-none prose-headings:font-serif prose-headings:font-bold prose-a:text-accent-600 dark:prose-a:text-accent-400 prose-custom"
+          dangerouslySetInnerHTML={{ __html: project.content }}
+        />
+      )}
+    </div>
+  </div>
+);
+
 interface BlogPostDetailProps {
   post: BlogPost;
   data: AppContent;
@@ -570,6 +718,7 @@ const App: React.FC = () => {
   const initialRoute = viewFromPath(window.location.pathname);
   const [view, setView] = useState<ViewState>(initialRoute.view);
   const [activePost, setActivePost] = useState<BlogPost | null>(null);
+  const [activeProject, setActiveProject] = useState<ProjectItem | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [language, setLanguage] = useState<Language>('en');
 
@@ -583,12 +732,16 @@ const App: React.FC = () => {
 
   const data: AppContent = content[language];
 
-  // Resolve initial blog post from URL
+  // Resolve initial blog post or project from URL
   useEffect(() => {
     if (initialRoute.view === ViewState.BLOG_DETAIL && initialRoute.postId) {
       const post = data.blog.find(p => p.id === initialRoute.postId);
       if (post) setActivePost(post);
       else setView(ViewState.BLOG);
+    } else if (initialRoute.view === ViewState.PROJECT_DETAIL && initialRoute.projectId) {
+      const project = data.projects.find(p => p.id === initialRoute.projectId);
+      if (project) setActiveProject(project);
+      else setView(ViewState.PROJECTS);
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -614,11 +767,14 @@ const App: React.FC = () => {
       if (route.view === ViewState.BLOG_DETAIL && route.postId) {
         const post = data.blog.find(p => p.id === route.postId);
         setActivePost(post ?? null);
+      } else if (route.view === ViewState.PROJECT_DETAIL && route.projectId) {
+        const project = data.projects.find(p => p.id === route.projectId);
+        setActiveProject(project ?? null);
       }
     };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
-  }, [data.blog]);
+  }, [data.blog, data.projects]);
 
   const navigateTo = useCallback((newView: ViewState) => {
     setView(newView);
@@ -633,6 +789,14 @@ const App: React.FC = () => {
     setView(ViewState.BLOG_DETAIL);
     setMobileMenuOpen(false);
     window.history.pushState(null, '', `/blog/${post.id}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
+  const openProject = useCallback((project: ProjectItem) => {
+    setActiveProject(project);
+    setView(ViewState.PROJECT_DETAIL);
+    setMobileMenuOpen(false);
+    window.history.pushState(null, '', `/projects/${project.id}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
@@ -661,7 +825,8 @@ const App: React.FC = () => {
       />
       <main>
         {view === ViewState.HOME && <HomeView data={data} onNavigate={navigateTo} />}
-        {view === ViewState.PROJECTS && <ProjectsView data={data} />}
+        {view === ViewState.PROJECTS && <ProjectsView data={data} onOpenProject={openProject} />}
+        {view === ViewState.PROJECT_DETAIL && activeProject && <ProjectDetail project={activeProject} data={data} onBack={() => navigateTo(ViewState.PROJECTS)} />}
         {view === ViewState.BLOG && <BlogView data={data} onOpenPost={openBlogPost} />}
         {view === ViewState.BLOG_DETAIL && activePost && <BlogPostDetail post={activePost} data={data} onBack={() => navigateTo(ViewState.BLOG)} />}
       </main>
