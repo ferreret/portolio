@@ -4,8 +4,7 @@ import { AppContent } from './types';
 import { docscanStudio } from './data/projects/docscan-studio';
 
 // Articles
-import { orchestratingAgents } from './data/articles/orchestrating-agents';
-import { netToPython } from './data/articles/net-to-python';
+import { aboutMe } from './data/articles/about-me';
 
 const enContent: AppContent = {
   ui: {
@@ -132,8 +131,7 @@ const enContent: AppContent = {
     docscanStudio.en
   ],
   blog: [
-    orchestratingAgents.en,
-    netToPython.en
+    aboutMe.en
   ]
 };
 
@@ -262,8 +260,7 @@ const esContent: AppContent = {
     docscanStudio.es
   ],
   blog: [
-    orchestratingAgents.es,
-    netToPython.es
+    aboutMe.es
   ]
 };
 

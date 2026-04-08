@@ -23,12 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-# Playwright MCP cache and ad-hoc screenshots
+# Playwright MCP cache and ad-hoc screenshots (project images live in public/)
 .playwright-mcp/
-/full-page.png
-/home-featured-projects.png
-/project-detail-en.png
-/project-detail-es.png
-/projects-en.png
-/projects-es-python-filter.png
-/projects-wip.png
+/*.png
