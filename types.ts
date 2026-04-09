@@ -46,6 +46,11 @@ export interface ProfileData {
   certifications: string[];
 }
 
+export interface HeroStat {
+  value: string;
+  label: string;
+}
+
 // Wrapper for all content to enable easy switching
 export interface AppContent {
   profile: ProfileData;
@@ -53,6 +58,7 @@ export interface AppContent {
   skillCategories: SkillCategory[];
   projects: ProjectItem[];
   blog: BlogPost[];
+  heroStats: HeroStat[];
   ui: {
     home: string;
     projects: string;
@@ -78,8 +84,6 @@ export interface AppContent {
     readArticle: string;
     viewDetails: string;
     available: string;
-    yearsExp: string;
-    specialist: string;
     copyright: string;
     footerTagline: string;
     skillsSubtitle: string;

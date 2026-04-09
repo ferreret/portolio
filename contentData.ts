@@ -32,8 +32,6 @@ const enContent: AppContent = {
     readArticle: "Read Article",
     viewDetails: "View Details",
     available: "Available for new projects",
-    yearsExp: "Years Experience",
-    specialist: "Automation Specialist",
     copyright: "All rights reserved.",
     footerTagline: "Empowering enterprises with intelligent automation, Generative AI, and robust software architecture.",
     skillsSubtitle: "Technologies and tools I use to bring ideas to life",
@@ -127,6 +125,11 @@ const enContent: AppContent = {
       skills: ["RPA Frameworks", "n8n", "REST APIs", "Power BI", "Process Mapping"]
     }
   ],
+  heroStats: [
+    { value: "25+", label: "Years in Tech" },
+    { value: "24+", label: "Years at Tecnomedia" },
+    { value: "2023", label: "Master in AI — IEBS" }
+  ],
   projects: [
     docscanStudio.en
   ],
@@ -161,8 +164,6 @@ const esContent: AppContent = {
     readArticle: "Leer Artículo",
     viewDetails: "Ver Detalles",
     available: "Disponible para nuevos proyectos",
-    yearsExp: "Años de Experiencia",
-    specialist: "Especialista en Automatización",
     copyright: "Todos los derechos reservados.",
     footerTagline: "Potenciando empresas con automatización inteligente, IA Generativa y arquitectura de software robusta.",
     skillsSubtitle: "Tecnologías y herramientas que utilizo para dar vida a las ideas",
@@ -255,6 +256,11 @@ const esContent: AppContent = {
       category: "Automatización y BI",
       skills: ["RPA Frameworks", "n8n", "REST APIs", "Power BI", "Mapeo de Procesos"]
     }
+  ],
+  heroStats: [
+    { value: "25+", label: "Años en Tech" },
+    { value: "24+", label: "Años en Tecnomedia" },
+    { value: "2023", label: "Máster en IA — IEBS" }
   ],
   projects: [
     docscanStudio.es
