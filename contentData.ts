@@ -110,7 +110,7 @@ const enContent: AppContent = {
   skillCategories: [
     {
       category: "AI & Machine Learning",
-      skills: ["LLMs", "Prompt Engineering", "AI Agents", "Agentic Coding", "Claude Code", "Gemini CLI", "Antigravity", "LangChain", "LangGraph", "CrewAI", "OpenAI SDK", "NLP", "RAG Pipelines", "Scikit-learn", "TensorFlow", "YOLO"]
+      skills: ["LLMs", "Prompt Engineering", "AI Agents", "Agentic Coding", "Claude Code", "Gemini CLI", "Antigravity", "LangChain", "LangGraph", "CrewAI", "OpenAI SDK", "NLP", "RAG Pipelines", "pgvector", "Qdrant", "Pinecone", "LangSmith", "Scikit-learn", "TensorFlow", "YOLO"]
     },
     {
       category: "Software Development",
@@ -242,7 +242,7 @@ const esContent: AppContent = {
   skillCategories: [
     {
       category: "IA y Machine Learning",
-      skills: ["LLMs", "Prompt Engineering", "AI Agents", "Agentic Coding", "Claude Code", "Gemini CLI", "Antigravity", "LangChain", "LangGraph", "CrewAI", "OpenAI SDK", "NLP", "RAG Pipelines", "Scikit-learn", "TensorFlow", "YOLO"]
+      skills: ["LLMs", "Prompt Engineering", "AI Agents", "Agentic Coding", "Claude Code", "Gemini CLI", "Antigravity", "LangChain", "LangGraph", "CrewAI", "OpenAI SDK", "NLP", "RAG Pipelines", "pgvector", "Qdrant", "Pinecone", "LangSmith", "Scikit-learn", "TensorFlow", "YOLO"]
     },
     {
       category: "Desarrollo de Software",

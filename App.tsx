@@ -384,6 +384,81 @@ const ProjectsView: React.FC<ProjectsViewProps> = ({ data, onOpenProject }) => {
   );
 };
 
+// --- GitHub Stats ---
+interface GitHubRepo { stargazers_count: number; language: string | null; fork: boolean; }
+interface GitHubData { repos: number; contributions: number; languages: { name: string; count: number; pct: number }[]; }
+
+const LANG_COLORS: Record<string, string> = {
+  Python: '#3572A5', 'C#': '#178600', 'Jupyter Notebook': '#DA5B0B',
+  TypeScript: '#3178C6', JavaScript: '#F1E05A', Dart: '#00B4AB',
+  HTML: '#E34C26', Lua: '#000080', Shell: '#89E051', CSS: '#563D7C',
+};
+
+const GitHubStats: React.FC<{ githubRef: React.RefObject<HTMLElement | null> }> = ({ githubRef }) => {
+  const [languages, setLanguages] = useState<GitHubData['languages'] | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch('https://api.github.com/users/ferreret/repos?per_page=100&sort=updated');
+        const repos: GitHubRepo[] = await res.json();
+        const langMap: Record<string, number> = {};
+        repos.filter(r => !r.fork).forEach(r => { if (r.language) langMap[r.language] = (langMap[r.language] || 0) + 1; });
+        const total = Object.values(langMap).reduce((a, b) => a + b, 0);
+        setLanguages(
+          Object.entries(langMap)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 6)
+            .map(([name, count]) => ({ name, count, pct: Math.round((count / total) * 100) }))
+        );
+      } catch { /* section renders without languages */ }
+    };
+    fetchData();
+  }, []);
+
+  return (
+    <section ref={githubRef} data-reveal className="py-20 bg-white dark:bg-warm-900 transition-colors duration-300">
+      <div className="max-w-4xl mx-auto px-6 lg:px-8">
+        <div className="text-center mb-10">
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <svg className="w-8 h-8 text-warm-900 dark:text-warm-50" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" /></svg>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-warm-900 dark:text-warm-50">GitHub</h2>
+          </div>
+          <a href="https://github.com/ferreret" target="_blank" rel="noreferrer" className="text-sm text-accent-600 dark:text-accent-400 hover:underline">@ferreret</a>
+        </div>
+        {/* Contribution graph */}
+        <div className="mb-6 p-6 rounded-xl bg-warm-50 dark:bg-warm-800 border border-warm-200 dark:border-warm-700">
+          <img
+            src="https://ghchart.rshah.org/ferreret"
+            alt="GitHub contribution graph for ferreret"
+            loading="lazy"
+            className="w-full h-auto"
+          />
+        </div>
+        {/* Languages */}
+        {languages && (
+          <div className="p-6 rounded-xl bg-warm-50 dark:bg-warm-800 border border-warm-200 dark:border-warm-700">
+            <h4 className="text-sm font-semibold text-warm-900 dark:text-warm-50 uppercase tracking-wider mb-5">Top Languages</h4>
+            <div className="h-3 rounded-full overflow-hidden flex mb-4">
+              {languages.map(l => (
+                <div key={l.name} style={{ width: `${l.pct}%`, backgroundColor: LANG_COLORS[l.name] || '#8b8680' }} title={`${l.name} ${l.pct}%`} />
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-x-4 gap-y-2">
+              {languages.map(l => (
+                <div key={l.name} className="flex items-center gap-1.5 text-xs text-warm-600 dark:text-warm-300">
+                  <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: LANG_COLORS[l.name] || '#8b8680' }} />
+                  {l.name} <span className="text-warm-400 dark:text-warm-500">{l.pct}%</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
+
 // --- Home View ---
 interface HomeViewProps {
   data: AppContent;
@@ -393,6 +468,7 @@ interface HomeViewProps {
 const HomeView: React.FC<HomeViewProps> = ({ data, onNavigate }) => {
   const aboutRef = useFadeInOnScroll();
   const skillsRef = useFadeInOnScroll();
+  const githubRef = useFadeInOnScroll();
   const experienceRef = useFadeInOnScroll();
   const educationRef = useFadeInOnScroll();
   const featuredRef = useFadeInOnScroll();
@@ -501,6 +577,9 @@ const HomeView: React.FC<HomeViewProps> = ({ data, onNavigate }) => {
           </div>
         </div>
       </section>
+
+      {/* GitHub Stats */}
+      <GitHubStats githubRef={githubRef} />
 
       {/* Experience */}
       <section ref={experienceRef} data-reveal className="py-20 bg-white dark:bg-warm-900 transition-colors duration-300">
