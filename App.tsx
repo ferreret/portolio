@@ -466,15 +466,13 @@ const HomeView: React.FC<HomeViewProps> = ({ data, onNavigate }) => {
             </p>
           </div>
 
-          <div className="max-w-2xl mx-auto grid grid-cols-2 gap-6">
-            <div className="text-center p-6 rounded-xl bg-warm-50 dark:bg-warm-800 border border-warm-100 dark:border-warm-700">
-              <div className="text-4xl font-serif font-bold text-accent-600 dark:text-accent-400 mb-1">25+</div>
-              <div className="text-sm text-warm-500 dark:text-warm-400 uppercase tracking-wider font-medium">{data.ui.yearsExp}</div>
-            </div>
-            <div className="text-center p-6 rounded-xl bg-warm-50 dark:bg-warm-800 border border-warm-100 dark:border-warm-700">
-              <div className="text-4xl font-serif font-bold text-accent-600 dark:text-accent-400 mb-1">AI</div>
-              <div className="text-sm text-warm-500 dark:text-warm-400 uppercase tracking-wider font-medium">{data.ui.specialist}</div>
-            </div>
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+            {data.heroStats.map((stat, index) => (
+              <div key={index} className="text-center p-6 rounded-xl bg-warm-50 dark:bg-warm-800 border border-warm-100 dark:border-warm-700">
+                <div className="text-4xl font-serif font-bold text-accent-600 dark:text-accent-400 mb-1">{stat.value}</div>
+                <div className="text-sm text-warm-500 dark:text-warm-400 uppercase tracking-wider font-medium">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
