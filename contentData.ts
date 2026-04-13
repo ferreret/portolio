@@ -42,7 +42,22 @@ const enContent: AppContent = {
     clearFilter: "Clear filter",
     builtWith: "Built with React & Tailwind",
     underConstruction: "Under Construction",
-    underConstructionDesc: "This section is being updated with new content. Check back soon!"
+    underConstructionDesc: "This section is being updated with new content. Check back soon!",
+    caseStudy: {
+      statusLabel: "Status",
+      statusProduction: "In production",
+      statusPrototype: "Prototype",
+      statusArchived: "Archived",
+      statusInDevelopment: "In development",
+      roleLabel: "Role",
+      timelineLabel: "Timeline",
+      problemTitle: "Problem",
+      solutionTitle: "Solution",
+      metricsTitle: "Impact",
+      architectureTitle: "Architecture",
+      techStackTitle: "Tech stack",
+      lessonsLearnedTitle: "Lessons learned"
+    }
   },
   profile: {
     name: "Nicolás Barceló Lozano",
@@ -174,7 +189,22 @@ const esContent: AppContent = {
     clearFilter: "Limpiar filtro",
     builtWith: "Hecho con React y Tailwind",
     underConstruction: "En construcción",
-    underConstructionDesc: "Esta sección se está actualizando con nuevo contenido. ¡Vuelve pronto!"
+    underConstructionDesc: "Esta sección se está actualizando con nuevo contenido. ¡Vuelve pronto!",
+    caseStudy: {
+      statusLabel: "Estado",
+      statusProduction: "En producción",
+      statusPrototype: "Prototipo",
+      statusArchived: "Archivado",
+      statusInDevelopment: "En desarrollo",
+      roleLabel: "Rol",
+      timelineLabel: "Periodo",
+      problemTitle: "Problema",
+      solutionTitle: "Solución",
+      metricsTitle: "Impacto",
+      architectureTitle: "Arquitectura",
+      techStackTitle: "Stack técnico",
+      lessonsLearnedTitle: "Lecciones aprendidas"
+    }
   },
   profile: {
     name: "Nicolás Barceló Lozano",
