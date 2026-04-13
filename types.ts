@@ -11,6 +11,18 @@ export interface ExperienceItem {
   highlights: string[];
 }
 
+export type ProjectStatus = 'production' | 'prototype' | 'archived' | 'in-development';
+
+export interface BusinessMetric {
+  label: string;
+  value: string;
+}
+
+export interface TechStackGroup {
+  category: string;
+  items: string[];
+}
+
 export interface ProjectItem {
   id: string;
   title: string;
@@ -19,6 +31,15 @@ export interface ProjectItem {
   imageUrl?: string;
   link?: string;
   content?: string;
+  status?: ProjectStatus;
+  problem?: string;
+  solution?: string;
+  businessMetrics?: BusinessMetric[];
+  architectureDiagram?: string;
+  techStack?: TechStackGroup[];
+  lessonsLearned?: string[];
+  role?: string;
+  timeline?: string;
 }
 
 export interface BlogPost {
@@ -95,5 +116,20 @@ export interface AppContent {
     builtWith: string;
     underConstruction: string;
     underConstructionDesc: string;
+    caseStudy: {
+      statusLabel: string;
+      statusProduction: string;
+      statusPrototype: string;
+      statusArchived: string;
+      statusInDevelopment: string;
+      roleLabel: string;
+      timelineLabel: string;
+      problemTitle: string;
+      solutionTitle: string;
+      metricsTitle: string;
+      architectureTitle: string;
+      techStackTitle: string;
+      lessonsLearnedTitle: string;
+    };
   };
 }
