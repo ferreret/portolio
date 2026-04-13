@@ -118,17 +118,10 @@ Reporta al usuario:
 
 ### Plantilla `ProjectItem` (data/projects/__SLUG__.ts)
 
+Schema extendido (fase 3). Los campos estructurados (`status`, `problem`, `solution`, `businessMetrics`, `techStack`, `lessonsLearned`, `role`, `timeline`, `architectureDiagram`) son **opcionales**. Déjalos como placeholders `[TODO: ...]` en string o como array vacío con TODO. Si quedan `undefined` no rompen el render. El campo `content` (HTML libre) sigue disponible como fallback pero **no lo uses para proyectos nuevos**: los campos estructurados dan mejor render.
+
 ```ts
 import { ProjectItem } from '../../types';
-
-const contentEn = `
-  <!-- TODO: añadir contenido HTML real del case study -->
-  <!-- Estructura sugerida: <h2>Overview</h2>, <h2>Problem</h2>, <h2>Solution</h2>, <h2>Results</h2>, <h2>Tech stack</h2>, <h2>Lessons learned</h2> -->
-`;
-
-const contentEs = `
-  <!-- TODO: añadir el mismo contenido en español, manteniendo paridad de estructura HTML -->
-`;
 
 export const __VAR_NAME__: { en: ProjectItem; es: ProjectItem } = {
   en: {
@@ -138,7 +131,15 @@ export const __VAR_NAME__: { en: ProjectItem; es: ProjectItem } = {
     tags: __TAGS__,
     imageUrl: "/__SLUG__.png",
     link: undefined,
-    content: contentEn
+    status: undefined,              // 'production' | 'prototype' | 'archived' | 'in-development'
+    role: undefined,                // ej. "Lead architect", "Sole developer"
+    timeline: undefined,            // ej. "Q2 2024 - Q4 2024"
+    problem: undefined,             // [TODO: 1-2 párrafos sobre el reto a resolver]
+    solution: undefined,            // [TODO: 1-2 párrafos sobre la solución adoptada]
+    businessMetrics: undefined,     // [{ label: "Tests", value: "849" }, ...] — SOLO números reales
+    architectureDiagram: undefined, // path a imagen en /public, ej. "/__SLUG__-arch.png"
+    techStack: undefined,           // [{ category: "UI", items: ["React", "Tailwind"] }, ...]
+    lessonsLearned: undefined,      // ["Lección 1...", "Lección 2..."]
   },
   es: {
     id: "__ID__",
@@ -147,7 +148,15 @@ export const __VAR_NAME__: { en: ProjectItem; es: ProjectItem } = {
     tags: __TAGS__,
     imageUrl: "/__SLUG__.png",
     link: undefined,
-    content: contentEs
+    status: undefined,
+    role: undefined,
+    timeline: undefined,
+    problem: undefined,
+    solution: undefined,
+    businessMetrics: undefined,
+    architectureDiagram: undefined,
+    techStack: undefined,
+    lessonsLearned: undefined,
   }
 };
 ```
@@ -189,7 +198,8 @@ export const __VAR_NAME__: { en: BlogPost; es: BlogPost } = {
 
 ## Notas
 
-- Si los campos opcionales del schema extendido (`status`, `problem`, `solution`, `businessMetrics`, `architectureDiagram`, `techStack`, `lessonsLearned`, `role`, `timeline`) ya existen en `types.ts` cuando ejecutes esta skill, **inclúyelos en la plantilla** como placeholders `[TODO: ...]` o `undefined`. Verifica leyendo `types.ts` antes de generar el scaffolding.
+- Lee `types.ts` antes de generar el scaffolding para confirmar que el schema `ProjectItem` no ha cambiado respecto a esta plantilla. Si hay campos nuevos, inclúyelos como `undefined` o placeholders.
+- **Hard rule**: nunca rellenar `businessMetrics`, `problem`, `solution` o `lessonsLearned` con valores inventados. Quedan como `undefined` hasta que el usuario aporte datos reales. Ver `feedback_no_fake_content.md`.
 - Convertir `__TAGS__` correctamente:
   - Si el usuario dio `["Python", "OCR"]`: emite `["Python", "OCR"]`
   - Si no dio nada: emite `["[TODO: tag1]", "[TODO: tag2]"]` para que sea visible que falta rellenarlo

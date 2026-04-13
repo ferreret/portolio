@@ -15,7 +15,7 @@ There are no tests or linting configured.
 
 ## Architecture
 
-Single-page portfolio app built with React 19 + TypeScript + Vite. Navigation is managed via a `ViewState` enum in `App.tsx` component state (`HOME`, `PROJECTS`, `BLOG`, `BLOG_DETAIL`) with URL sync via `history.pushState` / `popstate` (routes: `/`, `/projects`, `/blog`, `/blog/:id`).
+Single-page portfolio app built with React 19 + TypeScript + Vite. Routing is handled by React Router (`/`, `/projects`, `/projects/:id`, `/blog`, `/blog/:id`).
 
 ### Content system
 
@@ -29,9 +29,36 @@ These are imported and assembled in `contentData.ts`. To add a new project or ar
 
 All TypeScript interfaces are in `types.ts` (`AppContent`, `ProjectItem`, `BlogPost`, `ExperienceItem`, etc.).
 
+### Case-study project schema
+
+`ProjectItem` supports an extended schema for case studies (all fields optional):
+- `status`: `'production' | 'prototype' | 'archived' | 'in-development'`
+- `role`, `timeline`: short strings rendered in the project meta block
+- `problem`, `solution`: plain-text paragraphs (whitespace preserved)
+- `businessMetrics`: `{ label, value }[]` — rendered as cards at the top
+- `architectureDiagram`: path to an image in `public/`
+- `techStack`: `{ category, items }[]`
+- `lessonsLearned`: `string[]`
+- `content` (HTML string) remains as a fallback but prefer structured fields for new projects
+
+Section labels used by `ProjectDetail` are bilingual in `AppContent.ui.caseStudy`.
+
 ### App structure
 
-`App.tsx` contains the full UI. Components (`Header`, `Footer`, `HomeView`, `ProjectsView`, `BlogView`, `BlogPostDetail`) are extracted as proper React components with explicit props to avoid re-creation on each render.
+`App.tsx` is the top-level layout + router. Views live in `components/` (`HomeView`, `ProjectsView`, `ProjectDetail`, `BlogView`, `BlogPostDetail`, `Header`, `Footer`, `GitHubStats`, `Icons`). The `useFadeInOnScroll` hook lives in `hooks/`.
+
+## Adding a new project or article
+
+The preferred workflow uses the project-local Claude Code skills (in `.claude/skills/`):
+
+1. **`add-content-item`** — scaffolds the bilingual data file in `data/projects/<slug>.ts` or `data/articles/<slug>.ts` with the full extended schema as placeholders, computes the next `id`, and wires imports + arrays in `contentData.ts`. Never fills fields with invented content.
+2. The user fills in one language with **real** content (no made-up metrics, quotes, or post-mortems).
+3. **`sync-bilingual`** — produces the other-language version, preserving HTML parity, glossary terms, and number format conventions (`19,776` vs `19.776`).
+4. **`bilingual-content-reviewer` subagent** — final parity + fabrication audit before commit.
+
+The `tsc-on-edit` hook (`.claude/hooks/tsc-on-edit.sh`) runs `tsc --noEmit` on every edit to `.ts`/`.tsx` files as the quality gate. There are no tests or linting beyond this.
+
+**Hard rule**: portfolio content (projects, metrics, testimonials, posts) is always real and user-provided. Claude prepares the infrastructure; the user provides the substance. See `~/.claude/.../memory/feedback_no_fake_content.md`.
 
 ### Styling
 
