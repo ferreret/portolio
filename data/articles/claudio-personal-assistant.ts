@@ -6,7 +6,7 @@ const contentEn = `
       <p class="mb-4">Claudio is a different beast.</p>
       <p class="mb-4">Claudio is <strong>my</strong> personal assistant. He knows who I am, which projects I have open, how I slept last night, what I billed last quarter, and when my next meeting is. He reads and writes in my Obsidian vault, queries my Garmin, looks at my Google Calendar, commits to my repos, and reminds me on Fridays to do my weekly review. And if I ask him for a client report, he writes it using the format and conventions I defined myself — not the ones he made up.</p>
       <p class="mb-4">It's not magic. It's a well-crafted recipe of existing tools. This article covers how it's built, what it does, and — most importantly — what it does <strong>not</strong> do.</p>
-      <!-- SCREENSHOT 1: Obsidian open with the Inicio dashboard centered and the Claude Code panel on the right -->
+      <img src="/claudio/01-overview.png" alt="Obsidian open next to Claude Code on the desktop, showing a health dashboard and an active assistant session" class="w-full rounded-lg my-6" />
 
       <h3 class="text-xl font-bold mb-2 mt-6">The stack, no mystery</h3>
       <p class="mb-4">Claudio is not a product. He's an <strong>assembly</strong> of pieces that talk to each other:</p>
@@ -18,7 +18,7 @@ const contentEn = `
         <li><strong>A <code>CLAUDE.md</code> file</strong> at the vault root. It's Claudio's "constitution": which structure to follow, which conventions to respect, what to do at the start of each session.</li>
       </ul>
       <p class="mb-4">No component is exotic. What's interesting is how they fit together.</p>
-      <!-- SCREENSHOT 2: vault folder tree showing the PARA structure -->
+      <img src="/claudio/02-vault-tree.png" alt="Obsidian vault folder tree with PARA structure: 00_Dashboard, 01_Projects, 02_Areas, 03_Resources, 04_Archive, 05_Templates, 99_Inbox" class="rounded-lg my-6 mx-auto max-w-sm" />
 
       <h3 class="text-xl font-bold mb-2 mt-6">The vault: where memory lives</h3>
       <p class="mb-4">My Obsidian vault has a deliberately rigid structure:</p>
@@ -39,7 +39,7 @@ const contentEn = `
         <li>If a required field is missing, it flags it</li>
       </ul>
       <p class="mb-4">No need to repeat any of this each time. It lives in <code>CLAUDE.md</code>.</p>
-      <!-- SCREENSHOT 3: a note with frontmatter visible and wikilinks rendered in Obsidian -->
+      <img src="/claudio/03-note-frontmatter.png" alt="Obsidian note showing YAML frontmatter with tags and dates, alongside wikilinks rendered as clickable links" class="w-full rounded-lg my-6" />
 
       <h3 class="text-xl font-bold mb-2 mt-6">What happens when I open a conversation</h3>
       <p class="mb-4">Every time I start Claudio, in the first few seconds he does this — without me asking:</p>
@@ -56,7 +56,6 @@ const contentEn = `
         <li><strong>If today is Friday</strong>, he reminds me: "weekly review is due". And if I skipped it last week, the gap is marked as "not done" — he doesn't fabricate it after the fact.</li>
       </ol>
       <p class="mb-4">All of that takes less time than I do brewing the coffee.</p>
-      <!-- SCREENSHOT 4: Inicio.md dashboard open showing vital pulse + 7-day agenda -->
 
       <h3 class="text-xl font-bold mb-2 mt-6">The concrete capabilities</h3>
       <p class="mb-4">To make it clear what Claudio actually does day to day, some real examples:</p>
@@ -75,7 +74,7 @@ const contentEn = `
 
       <h4 class="text-lg font-semibold mb-2 mt-4">Reviews and rituals</h4>
       <p class="mb-4">Every Friday I trigger <code>/weekly</code> and Claudio runs a structured review: what I made progress on, what slipped, which priorities go into next week. If I have a hard decision stuck, <code>/decision</code> walks me through a stoic-pragmatic protocol to unblock it.</p>
-      <!-- SCREENSHOT 5: terminal showing Claude Code in action, e.g. the dashboards refresh -->
+      <img src="/claudio/04-terminal-claude-code.png" alt="Terminal with Claude Code running the session-start routine: environment detection, three dashboards refreshed in the background and an hourly cron scheduled" class="w-full rounded-lg my-6" />
 
       <h3 class="text-xl font-bold mb-2 mt-6">Persistent memory</h3>
       <p class="mb-4">Here comes one of the pieces that changes the experience the most.</p>
@@ -102,7 +101,7 @@ const contentEn = `
         <li><strong>Skills / slash commands</strong>. Custom commands invokable with <code>/</code>. For example: <code>/weekly</code>, <code>/inbox-process</code>, <code>/decision</code>, <code>/stoic</code>. Each one is a prompt template with specific context.</li>
         <li><strong>Subagents</strong>. Specialized agents Claudio can launch in parallel. I have <code>vault-integrity</code> (audits the vault) and <code>health-analyzer</code> (weekly Garmin correlations). They live in their own context and return a report when they're done.</li>
       </ul>
-      <!-- SCREENSHOT 6: list of available skills or a hook running -->
+      <img src="/claudio/05-skills-hooks.png" alt="Structure of the .claude folder with subfolders agents, commands, hooks, scripts and skills, the latter expanded showing the full list of available skills" class="rounded-lg my-6 mx-auto max-w-sm" />
 
       <h3 class="text-xl font-bold mb-2 mt-6">What it does NOT do</h3>
       <p class="mb-4">This part feels mandatory to me. Articles on AI tend to sell infinite capabilities. Mine are finite.</p>
@@ -146,7 +145,7 @@ const contentEs = `
       <p class="mb-4">Claudio es otra cosa.</p>
       <p class="mb-4">Claudio es <strong>mi</strong> asistente personal. Sabe quién soy, qué proyectos tengo abiertos, cómo dormí anoche, qué facturé el trimestre pasado y a qué hora tengo la próxima reunión. Lee y escribe en mi vault de Obsidian, consulta mi Garmin, mira mi Google Calendar, hace commits en mis repos y me avisa los viernes para hacer la revisión semanal. Y si le pido un informe de un cliente, lo escribe con el formato y las convenciones que yo mismo definí — no las que él se inventa.</p>
       <p class="mb-4">No es magia. Es una receta bien hecha de herramientas existentes. Este artículo cuenta cómo está montado, qué hace, y —lo más importante— qué <strong>no</strong> hace.</p>
-      <!-- SCREENSHOT 1: Obsidian abierto con el dashboard de Inicio al centro y el panel de Claude Code a la derecha -->
+      <img src="/claudio/01-overview.png" alt="Obsidian abierto junto a Claude Code en el escritorio, mostrando un dashboard de salud y una sesión activa del asistente" class="w-full rounded-lg my-6" />
 
       <h3 class="text-xl font-bold mb-2 mt-6">El stack, sin misterio</h3>
       <p class="mb-4">Claudio no es un producto. Es un <strong>ensamblaje</strong> de piezas que se hablan entre sí:</p>
@@ -158,7 +157,7 @@ const contentEs = `
         <li><strong>Un archivo <code>CLAUDE.md</code></strong> en la raíz del vault. Es la "constitución" de Claudio: qué estructura seguir, qué convenciones respetar, qué hacer al iniciar cada sesión.</li>
       </ul>
       <p class="mb-4">Ningún componente es exótico. Lo interesante es cómo encajan.</p>
-      <!-- SCREENSHOT 2: árbol de carpetas del vault mostrando la estructura PARA -->
+      <img src="/claudio/02-vault-tree.png" alt="Árbol de carpetas del vault de Obsidian con la estructura PARA: 00_Dashboard, 01_Projects, 02_Areas, 03_Resources, 04_Archive, 05_Templates, 99_Inbox" class="rounded-lg my-6 mx-auto max-w-sm" />
 
       <h3 class="text-xl font-bold mb-2 mt-6">El vault: donde vive la memoria</h3>
       <p class="mb-4">Mi vault de Obsidian tiene una estructura rígida a propósito:</p>
@@ -179,7 +178,7 @@ const contentEs = `
         <li>Si falta algún campo obligatorio, lo señala</li>
       </ul>
       <p class="mb-4">No hay que decírselo cada vez. Está en <code>CLAUDE.md</code>.</p>
-      <!-- SCREENSHOT 3: una nota con frontmatter visible y wikilinks renderizados en Obsidian -->
+      <img src="/claudio/03-note-frontmatter.png" alt="Nota de Obsidian mostrando frontmatter YAML con tags y fechas, junto a wikilinks renderizados como enlaces clicables" class="w-full rounded-lg my-6" />
 
       <h3 class="text-xl font-bold mb-2 mt-6">Lo que pasa al abrir una conversación</h3>
       <p class="mb-4">Cada vez que arranco Claudio, en los primeros segundos hace esto, sin que yo pida nada:</p>
@@ -196,7 +195,6 @@ const contentEs = `
         <li><strong>Si hoy es viernes</strong>, me avisa: "te toca la revisión semanal". Y si no la hice la semana anterior, marca el hueco como "no ejecutada" — no la inventa a posteriori.</li>
       </ol>
       <p class="mb-4">Todo eso tarda menos de lo que tardo en poner el café.</p>
-      <!-- SCREENSHOT 4: dashboard Inicio.md abierto mostrando pulso vital + agenda 7 días -->
 
       <h3 class="text-xl font-bold mb-2 mt-6">Las capacidades concretas</h3>
       <p class="mb-4">Para que se entienda qué hace Claudio en el día a día, algunos ejemplos reales:</p>
@@ -215,7 +213,7 @@ const contentEs = `
 
       <h4 class="text-lg font-semibold mb-2 mt-4">Revisiones y rituales</h4>
       <p class="mb-4">Cada viernes disparo <code>/weekly</code> y Claudio conduce una revisión estructurada: qué avancé, qué se quedó por hacer, qué prioridades van a la semana siguiente. Si tengo una decisión difícil atascada, <code>/decision</code> me lleva por un protocolo estoico-pragmático para desbloquearla.</p>
-      <!-- SCREENSHOT 5: terminal mostrando Claude Code en acción, por ejemplo la actualización de dashboards -->
+      <img src="/claudio/04-terminal-claude-code.png" alt="Terminal con Claude Code ejecutando la rutina de inicio de sesión: detección de entorno, refresh de tres dashboards en background y programación de un cron horario" class="w-full rounded-lg my-6" />
 
       <h3 class="text-xl font-bold mb-2 mt-6">La memoria persistente</h3>
       <p class="mb-4">Aquí viene una de las piezas que más cambia la experiencia.</p>
@@ -242,7 +240,7 @@ const contentEs = `
         <li><strong>Skills / slash commands</strong>. Comandos personalizados invocables con <code>/</code>. Por ejemplo: <code>/weekly</code>, <code>/inbox-process</code>, <code>/decision</code>, <code>/stoic</code>. Cada uno es una plantilla de prompt con contexto específico.</li>
         <li><strong>Subagentes</strong>. Agentes especializados que Claudio puede lanzar en paralelo. Tengo <code>vault-integrity</code> (audita el vault) y <code>health-analyzer</code> (correlaciones semanales de Garmin). Viven en su propio contexto y devuelven un informe cuando terminan.</li>
       </ul>
-      <!-- SCREENSHOT 6: listado de skills disponibles o un hook ejecutándose -->
+      <img src="/claudio/05-skills-hooks.png" alt="Estructura de la carpeta .claude con subcarpetas agents, commands, hooks, scripts y skills, esta última desplegada mostrando el listado completo de skills disponibles" class="rounded-lg my-6 mx-auto max-w-sm" />
 
       <h3 class="text-xl font-bold mb-2 mt-6">Lo que NO hace</h3>
       <p class="mb-4">Toda esta parte me parece obligatoria. Los artículos sobre IA tienden a vender capacidades infinitas. Las mías son finitas.</p>
