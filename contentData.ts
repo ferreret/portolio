@@ -5,6 +5,7 @@ import { docscanStudio } from './data/projects/docscan-studio';
 
 // Articles
 import { aboutMe } from './data/articles/about-me';
+import { claudioPersonalAssistant } from './data/articles/claudio-personal-assistant';
 
 const enContent: AppContent = {
   ui: {
@@ -149,6 +150,7 @@ const enContent: AppContent = {
     docscanStudio.en
   ],
   blog: [
+    claudioPersonalAssistant.en,
     aboutMe.en
   ]
 };
@@ -296,6 +298,7 @@ const esContent: AppContent = {
     docscanStudio.es
   ],
   blog: [
+    claudioPersonalAssistant.es,
     aboutMe.es
   ]
 };
