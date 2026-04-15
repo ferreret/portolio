@@ -76,9 +76,9 @@ export const Header: React.FC<HeaderProps> = ({
             {theme === 'light' ? <MoonIcon /> : <SunIcon />}
           </button>
 
-          <a href={data.profile.linkedin} target="_blank" rel="noreferrer" className="ml-3 px-4 py-2 text-sm font-medium text-white bg-warm-900 dark:bg-warm-100 dark:text-warm-900 rounded-lg hover:bg-warm-800 dark:hover:bg-warm-200 transition-colors">
+          <NavLink to="/contact" className="ml-3 px-4 py-2 text-sm font-medium text-white bg-warm-900 dark:bg-warm-100 dark:text-warm-900 rounded-lg hover:bg-warm-800 dark:hover:bg-warm-200 transition-colors">
             {data.ui.contact}
-          </a>
+          </NavLink>
         </nav>
 
         {/* Mobile */}
@@ -113,9 +113,9 @@ export const Header: React.FC<HeaderProps> = ({
           <NavLink to="/" end className={mobileNavLinkClass} onClick={() => handleMobileNav('/')}>{data.ui.home}</NavLink>
           <NavLink to="/projects" className={mobileNavLinkClass} onClick={() => handleMobileNav('/projects')}>{data.ui.projects}</NavLink>
           <NavLink to="/blog" className={mobileNavLinkClass} onClick={() => handleMobileNav('/blog')}>{data.ui.blog}</NavLink>
-          <a href={data.profile.linkedin} className="text-center p-3 rounded-lg bg-warm-900 dark:bg-warm-100 text-white dark:text-warm-900 text-sm font-medium mt-1">
+          <NavLink to="/contact" className="text-center p-3 rounded-lg bg-warm-900 dark:bg-warm-100 text-white dark:text-warm-900 text-sm font-medium mt-1" onClick={() => handleMobileNav('/contact')}>
             {data.ui.contact}
-          </a>
+          </NavLink>
         </nav>
       )}
     </header>

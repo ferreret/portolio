@@ -44,6 +44,18 @@ const enContent: AppContent = {
     builtWith: "Built with React & Tailwind",
     underConstruction: "Under Construction",
     underConstructionDesc: "This section is being updated with new content. Check back soon!",
+    contactTitle: "Let's talk",
+    contactSubtitle: "Open to conversations about AI Agents, LLM systems, and software architecture — whether it's a role, a collaboration, or an interesting problem you'd like to explore.",
+    contactEmailTitle: "Email",
+    contactEmailDesc: "Best channel for detailed proposals, roles, or project briefs. I reply within a couple of working days.",
+    contactEmailCta: "Send an email",
+    contactEmailSubject: "Portfolio contact",
+    contactLinkedinTitle: "LinkedIn",
+    contactLinkedinDesc: "Quick intros, recruiter messages, or just to connect. My primary social network for professional conversations.",
+    contactLinkedinCta: "Open LinkedIn",
+    contactGithubTitle: "GitHub",
+    contactGithubDesc: "Browse my public projects and recent activity. The portfolio itself lives here too.",
+    contactGithubCta: "Open GitHub",
     caseStudy: {
       statusLabel: "Status",
       statusProduction: "In production",
@@ -66,6 +78,7 @@ const enContent: AppContent = {
     location: "Barcelona, Spain",
     email: "nicolas.barcelo.lozano@gmail.com",
     linkedin: "https://www.linkedin.com/in/ferreret/",
+    github: "https://github.com/ferreret",
     summary: `Senior Data Scientist & Software Engineer with 25+ years of experience designing and implementing high-impact solutions across enterprise systems, document management, and process automation. Currently focused on AI Agents, LLM orchestration, and intelligent automation, combining a strong foundation in .NET development with expertise in Python, NLP, and Generative AI. Passionate about rapidly prototyping, testing, and scaling AI systems that enhance decision-making, optimize workflows, and deliver measurable business impact.`,
     education: [
       {
@@ -192,6 +205,18 @@ const esContent: AppContent = {
     builtWith: "Hecho con React y Tailwind",
     underConstruction: "En construcción",
     underConstructionDesc: "Esta sección se está actualizando con nuevo contenido. ¡Vuelve pronto!",
+    contactTitle: "Hablemos",
+    contactSubtitle: "Abierto a conversaciones sobre Agentes de IA, sistemas con LLM y arquitectura de software, ya sea una oferta, una colaboración o un problema interesante que quieras explorar.",
+    contactEmailTitle: "Email",
+    contactEmailDesc: "El mejor canal para propuestas detalladas, ofertas o briefs de proyecto. Respondo en un par de días laborables.",
+    contactEmailCta: "Enviar un email",
+    contactEmailSubject: "Contacto desde el portfolio",
+    contactLinkedinTitle: "LinkedIn",
+    contactLinkedinDesc: "Presentaciones rápidas, mensajes de recruiters o simplemente conectar. Mi red social principal para conversaciones profesionales.",
+    contactLinkedinCta: "Abrir LinkedIn",
+    contactGithubTitle: "GitHub",
+    contactGithubDesc: "Explora mis proyectos públicos y actividad reciente. El propio portfolio vive aquí también.",
+    contactGithubCta: "Abrir GitHub",
     caseStudy: {
       statusLabel: "Estado",
       statusProduction: "En producción",
@@ -214,6 +239,7 @@ const esContent: AppContent = {
     location: "Barcelona, España",
     email: "nicolas.barcelo.lozano@gmail.com",
     linkedin: "https://www.linkedin.com/in/ferreret/",
+    github: "https://github.com/ferreret",
     summary: `Senior Data Scientist & Software Engineer con más de 25 años de experiencia diseñando e implementando soluciones de alto impacto en sistemas empresariales, gestión documental y automatización de procesos. Actualmente enfocado en Agentes de IA, orquestación de LLMs y automatización inteligente, combinando una sólida base en desarrollo .NET con experiencia en Python, NLP e IA Generativa. Apasionado por prototipar, probar y escalar rápidamente sistemas de IA que mejoren la toma de decisiones, optimicen flujos de trabajo y entreguen valor comercial medible.`,
     education: [
       {

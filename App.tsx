@@ -9,6 +9,7 @@ import { ProjectsView } from './components/ProjectsView';
 import { ProjectDetail } from './components/ProjectDetail';
 import { BlogView } from './components/BlogView';
 import { BlogPostDetail } from './components/BlogPostDetail';
+import { ContactSection } from './components/ContactSection';
 
 type Language = 'en' | 'es';
 type Theme = 'light' | 'dark';
@@ -83,6 +84,7 @@ const App: React.FC = () => {
           <Route path="/projects/:id" element={<ProjectDetail data={data} />} />
           <Route path="/blog" element={<BlogView data={data} />} />
           <Route path="/blog/:id" element={<BlogPostDetail data={data} />} />
+          <Route path="/contact" element={<ContactSection data={data} />} />
         </Routes>
       </main>
       <Footer data={data} emailCopied={emailCopied} onCopyEmail={copyEmail} />

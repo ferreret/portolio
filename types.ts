@@ -58,6 +58,7 @@ export interface ProfileData {
   location: string;
   email: string;
   linkedin: string;
+  github: string;
   summary: string;
   education: {
     degree: string;
@@ -116,6 +117,18 @@ export interface AppContent {
     builtWith: string;
     underConstruction: string;
     underConstructionDesc: string;
+    contactTitle: string;
+    contactSubtitle: string;
+    contactEmailTitle: string;
+    contactEmailDesc: string;
+    contactEmailCta: string;
+    contactEmailSubject: string;
+    contactLinkedinTitle: string;
+    contactLinkedinDesc: string;
+    contactLinkedinCta: string;
+    contactGithubTitle: string;
+    contactGithubDesc: string;
+    contactGithubCta: string;
     caseStudy: {
       statusLabel: string;
       statusProduction: string;
