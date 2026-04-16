@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-04-16T11:35:15.578Z",
+  "generatedAt": "2026-04-16T18:34:23.373Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/docscan",
+      "repoShort": "docscan",
+      "repoUrl": "https://github.com/ferreret/docscan",
+      "latestMessage": "docs: progress report — brainstorming y plan del editor de pipeline (2026-04-16)",
+      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/3fc5c5869cfe71eb7f89577b76e609c6e0024ac2",
+      "pushCount": 1,
+      "latestAt": "2026-04-16T15:23:21Z"
+    },
     {
       "repo": "ferreret/modern-conky-dashboard",
       "repoShort": "modern-conky-dashboard",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/modern-conky-dashboard/commit/7d61c9e94f29672fdb64cf5426873b08e870df98",
       "pushCount": 3,
       "latestAt": "2026-04-10T16:09:03Z"
-    },
-    {
-      "repo": "ferreret/docscan",
-      "repoShort": "docscan",
-      "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "docs: progress report — storage MinIO + frontend Vue 3 (2026-04-10)",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/73873564260953f29edb852f331dc88ccff95220",
-      "pushCount": 1,
-      "latestAt": "2026-04-10T14:55:27Z"
     }
   ]
 }
