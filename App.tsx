@@ -79,7 +79,7 @@ const App: React.FC = () => {
       />
       <main>
         <Routes>
-          <Route path="/" element={<HomeView data={data} />} />
+          <Route path="/" element={<HomeView data={data} language={language} />} />
           <Route path="/projects" element={<ProjectsView data={data} />} />
           <Route path="/projects/:id" element={<ProjectDetail data={data} />} />
           <Route path="/blog" element={<BlogView data={data} />} />

@@ -73,6 +73,22 @@ export interface HeroStat {
   label: string;
 }
 
+export interface ActivityItem {
+  repo: string;
+  repoShort: string;
+  repoUrl: string;
+  latestMessage: string;
+  latestCommitUrl: string;
+  pushCount: number;
+  latestAt: string;
+}
+
+export interface ActivityFeed {
+  generatedAt: string;
+  user: string;
+  items: ActivityItem[];
+}
+
 // Wrapper for all content to enable easy switching
 export interface AppContent {
   profile: ProfileData;
@@ -109,6 +125,11 @@ export interface AppContent {
     copyright: string;
     footerTagline: string;
     skillsSubtitle: string;
+    activityTitle: string;
+    activitySubtitle: string;
+    activityCommitSingular: string;
+    activityCommitPlural: string;
+    activityViewCommit: string;
     scrollIndicator: string;
     allTags: string;
     noProjectsFound: string;
