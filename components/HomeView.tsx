@@ -4,12 +4,14 @@ import { AppContent } from '@/types';
 import { useFadeInOnScroll } from '@/hooks/useFadeInOnScroll';
 import { ArrowRightIcon, DownloadIcon } from './Icons';
 import { GitHubStats } from './GitHubStats';
+import { ActivityTicker } from './ActivityTicker';
 
 interface HomeViewProps {
   data: AppContent;
+  language: 'en' | 'es';
 }
 
-export const HomeView: React.FC<HomeViewProps> = ({ data }) => {
+export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
   const navigate = useNavigate();
   const aboutRef = useFadeInOnScroll();
   const skillsRef = useFadeInOnScroll();
@@ -121,6 +123,9 @@ export const HomeView: React.FC<HomeViewProps> = ({ data }) => {
           </div>
         </div>
       </section>
+
+      {/* Currently building — GitHub activity ticker */}
+      <ActivityTicker ui={data.ui} language={language} />
 
       {/* GitHub Stats */}
       <GitHubStats />
