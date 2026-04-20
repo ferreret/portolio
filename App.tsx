@@ -10,6 +10,8 @@ import { ProjectDetail } from './components/ProjectDetail';
 import { BlogView } from './components/BlogView';
 import { BlogPostDetail } from './components/BlogPostDetail';
 import { ContactSection } from './components/ContactSection';
+import { ScrollProgress } from './components/ScrollProgress';
+import { CVView } from './components/CVView';
 
 type Language = 'en' | 'es';
 type Theme = 'light' | 'dark';
@@ -19,17 +21,25 @@ const getSystemTheme = (): Theme =>
     ? 'dark'
     : 'light';
 
+const getStoredLanguage = (): Language => {
+  if (typeof window === 'undefined') return 'en';
+  const stored = window.localStorage?.getItem('lang');
+  if (stored === 'en' || stored === 'es') return stored;
+  const browser = window.navigator?.language?.slice(0, 2);
+  return browser === 'es' ? 'es' : 'en';
+};
+
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }, [pathname]);
   return null;
 };
 
 const App: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>(getStoredLanguage);
   const [theme, setTheme] = useState<Theme>(getSystemTheme);
   const [emailCopied, setEmailCopied] = useState(false);
 
@@ -44,9 +54,10 @@ const App: React.FC = () => {
     }
   }, [theme]);
 
-  // Sync language to html lang attribute
+  // Sync language to html lang attribute + persist
   useEffect(() => {
     document.documentElement.lang = language;
+    window.localStorage?.setItem('lang', language);
   }, [language]);
 
   // Close mobile menu on route change
@@ -65,18 +76,23 @@ const App: React.FC = () => {
     setTimeout(() => setEmailCopied(false), 2000);
   }, [data.profile.email]);
 
+  const isCV = location.pathname.startsWith('/cv');
+
   return (
-    <div className="min-h-screen bg-warm-50 dark:bg-warm-950 font-sans selection:bg-accent-100 selection:text-accent-900 dark:selection:bg-accent-900/50 dark:selection:text-accent-100 transition-colors duration-300">
+    <div className={`${isCV ? 'cv-route min-h-screen' : 'min-h-screen bg-warm-50 dark:bg-warm-950 transition-colors duration-300'} font-sans selection:bg-accent-100 selection:text-accent-900 dark:selection:bg-accent-900/50 dark:selection:text-accent-100`}>
       <ScrollToTop />
-      <Header
-        data={data}
-        language={language}
-        theme={theme}
-        mobileMenuOpen={mobileMenuOpen}
-        onToggleLanguage={toggleLanguage}
-        onToggleTheme={toggleTheme}
-        onToggleMobileMenu={toggleMobileMenu}
-      />
+      {!isCV && <ScrollProgress />}
+      {!isCV && (
+        <Header
+          data={data}
+          language={language}
+          theme={theme}
+          mobileMenuOpen={mobileMenuOpen}
+          onToggleLanguage={toggleLanguage}
+          onToggleTheme={toggleTheme}
+          onToggleMobileMenu={toggleMobileMenu}
+        />
+      )}
       <main>
         <Routes>
           <Route path="/" element={<HomeView data={data} language={language} />} />
@@ -85,9 +101,10 @@ const App: React.FC = () => {
           <Route path="/blog" element={<BlogView data={data} />} />
           <Route path="/blog/:id" element={<BlogPostDetail data={data} />} />
           <Route path="/contact" element={<ContactSection data={data} />} />
+          <Route path="/cv" element={<CVView data={data} language={language} />} />
         </Routes>
       </main>
-      <Footer data={data} emailCopied={emailCopied} onCopyEmail={copyEmail} />
+      {!isCV && <Footer data={data} emailCopied={emailCopied} onCopyEmail={copyEmail} />}
     </div>
   );
 };

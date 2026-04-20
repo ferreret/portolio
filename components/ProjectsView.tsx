@@ -57,8 +57,8 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({ data }) => {
             {filteredProjects.map(project => (
               <article
                 key={project.id}
-                onClick={() => navigate(`/projects/${project.id}`)}
-                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); navigate(`/projects/${project.id}`); } }}
+                onClick={() => navigate(`/projects/${project.id}`, { viewTransition: true })}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); navigate(`/projects/${project.id}`, { viewTransition: true }); } }}
                 role="link"
                 tabIndex={0}
                 className="group bg-warm-50 dark:bg-warm-800 rounded-xl overflow-hidden border border-warm-200 dark:border-warm-700 hover:border-accent-300 dark:hover:border-accent-700 transition-all duration-300 hover:shadow-lg flex flex-col cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent-500"

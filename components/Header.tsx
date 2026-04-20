@@ -38,7 +38,7 @@ export const Header: React.FC<HeaderProps> = ({
 
   const handleMobileNav = (to: string) => {
     onToggleMobileMenu();
-    navigate(to);
+    navigate(to, { viewTransition: true });
   };
 
   return (
@@ -48,6 +48,7 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="max-w-6xl relative mx-auto px-6 lg:px-8 h-16 flex justify-between items-center">
         <NavLink
           to="/"
+          viewTransition
           className="text-lg font-serif font-bold text-warm-900 dark:text-warm-50 tracking-tight"
         >
           Nicol&aacute;s Barcel&oacute;
@@ -55,9 +56,9 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
-          <NavLink to="/" end className={navLinkClass}>{data.ui.home}</NavLink>
-          <NavLink to="/projects" className={navLinkClass}>{data.ui.projects}</NavLink>
-          <NavLink to="/blog" className={navLinkClass}>{data.ui.blog}</NavLink>
+          <NavLink to="/" end viewTransition className={navLinkClass}>{data.ui.home}</NavLink>
+          <NavLink to="/projects" viewTransition className={navLinkClass}>{data.ui.projects}</NavLink>
+          <NavLink to="/blog" viewTransition className={navLinkClass}>{data.ui.blog}</NavLink>
 
           <div className="h-4 w-px bg-warm-300 dark:bg-warm-700 mx-2" aria-hidden="true" />
 
@@ -76,7 +77,7 @@ export const Header: React.FC<HeaderProps> = ({
             {theme === 'light' ? <MoonIcon /> : <SunIcon />}
           </button>
 
-          <NavLink to="/contact" className="ml-3 px-4 py-2 text-sm font-medium text-white bg-warm-900 dark:bg-warm-100 dark:text-warm-900 rounded-lg hover:bg-warm-800 dark:hover:bg-warm-200 transition-colors">
+          <NavLink to="/contact" viewTransition className="ml-3 px-4 py-2 text-sm font-medium text-white bg-warm-900 dark:bg-warm-100 dark:text-warm-900 rounded-lg hover:bg-warm-800 dark:hover:bg-warm-200 transition-colors">
             {data.ui.contact}
           </NavLink>
         </nav>
@@ -110,10 +111,10 @@ export const Header: React.FC<HeaderProps> = ({
 
       {mobileMenuOpen && (
         <nav className="md:hidden absolute top-full left-0 right-0 bg-warm-50/95 dark:bg-warm-950/95 backdrop-blur-xl border-b border-warm-200 dark:border-warm-800 p-4 flex flex-col gap-1 animate-fade-in" aria-label="Mobile navigation">
-          <NavLink to="/" end className={mobileNavLinkClass} onClick={() => handleMobileNav('/')}>{data.ui.home}</NavLink>
-          <NavLink to="/projects" className={mobileNavLinkClass} onClick={() => handleMobileNav('/projects')}>{data.ui.projects}</NavLink>
-          <NavLink to="/blog" className={mobileNavLinkClass} onClick={() => handleMobileNav('/blog')}>{data.ui.blog}</NavLink>
-          <NavLink to="/contact" className="text-center p-3 rounded-lg bg-warm-900 dark:bg-warm-100 text-white dark:text-warm-900 text-sm font-medium mt-1" onClick={() => handleMobileNav('/contact')}>
+          <NavLink to="/" end viewTransition className={mobileNavLinkClass} onClick={() => handleMobileNav('/')}>{data.ui.home}</NavLink>
+          <NavLink to="/projects" viewTransition className={mobileNavLinkClass} onClick={() => handleMobileNav('/projects')}>{data.ui.projects}</NavLink>
+          <NavLink to="/blog" viewTransition className={mobileNavLinkClass} onClick={() => handleMobileNav('/blog')}>{data.ui.blog}</NavLink>
+          <NavLink to="/contact" viewTransition className="text-center p-3 rounded-lg bg-warm-900 dark:bg-warm-100 text-white dark:text-warm-900 text-sm font-medium mt-1" onClick={() => handleMobileNav('/contact')}>
             {data.ui.contact}
           </NavLink>
         </nav>

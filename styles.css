@@ -85,9 +85,125 @@
   font-weight: 600;
 }
 
+/* Editorial drop cap — first-letter treatment for About summary */
+.drop-cap::first-letter {
+  float: left;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: 3.6em;
+  line-height: 0.85;
+  padding: 0.08em 0.12em 0 0;
+  color: #0d9488; /* accent-600 */
+}
+
+.dark .drop-cap::first-letter {
+  color: #2dd4bf; /* accent-400 */
+}
+
 /* Gradient text helper */
 .text-gradient {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* View Transitions — SPA route change cross-fade */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 260ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
+/* CV route: section heading */
+.cv-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 11pt;
+  font-weight: 700;
+  color: #0d9488;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid rgba(13, 148, 136, 0.35);
+  padding-bottom: 3px;
+  margin-bottom: 8px;
+}
+
+/* CV route: hide app-level chrome (grain, etc.) on screen too */
+.cv-route::before,
+.cv-route::after {
+  display: none !important;
+}
+
+/* Print rules — primarily tuned for /cv */
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  html, body {
+    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body::before {
+    display: none !important;
+  }
+
+  .cv-screen {
+    background: white !important;
+    padding: 0 !important;
+    min-height: 0 !important;
+  }
+
+  .cv-document {
+    box-shadow: none !important;
+    margin: 0 !important;
+    max-width: none !important;
+    width: 210mm !important;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  .cv-document a {
+    color: inherit !important;
+  }
+}
+
+/* Subtle editorial grain — SVG noise overlay
+   pointer-events: none means it never intercepts clicks.
+   Stays below fixed elements (header z-50, scroll progress z-60). */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  mix-blend-mode: multiply;
+}
+
+.dark body::before {
+  opacity: 0.06;
+  mix-blend-mode: screen;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    opacity: 0.02;
+  }
 }
