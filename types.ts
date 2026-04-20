@@ -89,6 +89,43 @@ export interface ActivityFeed {
   items: ActivityItem[];
 }
 
+// CV content structure — richer than portfolio experience (categorized bullets).
+// Shares profile/education/certifications/skills from AppContent; only CV-specific
+// fields live here.
+export interface CVExperienceSection {
+  title?: string;
+  bullets: string[];
+}
+
+export interface CVExperienceItem {
+  company: string;
+  role: string;
+  period: string;
+  location: string;
+  sections: CVExperienceSection[];
+}
+
+export interface CVSkillGroup {
+  category: string;
+  items: string;
+}
+
+export interface CVContent {
+  labels: {
+    summary: string;
+    experience: string;
+    education: string;
+    certifications: string;
+    skills: string;
+    languages: string;
+    portfolio: string;
+  };
+  summary: string[];
+  experience: CVExperienceItem[];
+  skills: CVSkillGroup[];
+  languages: string;
+}
+
 // Wrapper for all content to enable easy switching
 export interface AppContent {
   profile: ProfileData;

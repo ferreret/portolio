@@ -58,14 +58,14 @@ export const BlogView: React.FC<BlogViewProps> = ({ data }) => {
             {filteredPosts.map(post => (
               <article
                 key={post.id}
-                onClick={() => navigate(`/blog/${post.id}`)}
-                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); navigate(`/blog/${post.id}`); } }}
+                onClick={() => navigate(`/blog/${post.id}`, { viewTransition: true })}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); navigate(`/blog/${post.id}`, { viewTransition: true }); } }}
                 role="link"
                 tabIndex={0}
                 className="group bg-warm-50 dark:bg-warm-800 rounded-xl overflow-hidden border border-warm-200 dark:border-warm-700 hover:border-accent-300 dark:hover:border-accent-700 transition-all duration-300 hover:shadow-lg flex flex-col cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent-500"
               >
                 <div className="p-6 flex-1 flex flex-col">
-                  <div className="flex items-center gap-3 text-xs text-warm-400 dark:text-warm-500 mb-3">
+                  <div className="flex items-center gap-3 text-xs text-warm-400 dark:text-warm-500 mb-3 tabular-nums">
                     <time>{post.date}</time>
                     <span aria-hidden="true">&middot;</span>
                     <span>{post.readTime}</span>

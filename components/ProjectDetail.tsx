@@ -39,7 +39,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
   return (
     <div className="pt-24 pb-20 animate-fade-in min-h-screen bg-white dark:bg-warm-900 transition-colors duration-300">
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
-        <button onClick={() => navigate('/projects')} className="mt-8 mb-8 flex items-center gap-2 text-warm-400 hover:text-accent-600 dark:hover:text-accent-400 transition-colors text-sm">
+        <button onClick={() => navigate('/projects', { viewTransition: true })} className="mt-8 mb-8 flex items-center gap-2 text-warm-400 hover:text-accent-600 dark:hover:text-accent-400 transition-colors text-sm">
           <ArrowLeftIcon />
           {data.ui.backToProjects}
         </button>

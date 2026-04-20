@@ -5,6 +5,7 @@ import { useFadeInOnScroll } from '@/hooks/useFadeInOnScroll';
 import { ArrowRightIcon, DownloadIcon } from './Icons';
 import { GitHubStats } from './GitHubStats';
 import { ActivityTicker } from './ActivityTicker';
+import { AnimatedNumber } from './AnimatedNumber';
 
 interface HomeViewProps {
   data: AppContent;
@@ -46,14 +47,14 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
 
               <div className="flex flex-wrap gap-3 pt-2">
                 <button
-                  onClick={() => navigate('/projects')}
+                  onClick={() => navigate('/projects', { viewTransition: true })}
                   className="group px-6 py-3 bg-warm-900 dark:bg-warm-50 text-white dark:text-warm-900 font-medium rounded-lg hover:bg-warm-800 dark:hover:bg-warm-200 transition-colors flex items-center gap-2"
                 >
                   {data.ui.viewProjects}
                   <ArrowRightIcon />
                 </button>
                 <a
-                  href="/cv.pdf"
+                  href={`/cv-${language}.pdf`}
                   download
                   className="px-6 py-3 text-warm-700 dark:text-warm-200 border border-warm-300 dark:border-warm-700 font-medium rounded-lg hover:bg-warm-100 dark:hover:bg-warm-800 transition-colors flex items-center gap-2"
                 >
@@ -81,9 +82,9 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
       {/* About / Summary */}
       <section ref={aboutRef} data-reveal className="py-20 bg-white dark:bg-warm-900 transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-warm-900 dark:text-warm-50 mb-6">{data.ui.experienceTitle}</h2>
-            <p className="text-warm-500 dark:text-warm-400 text-lg leading-relaxed">
+          <div className="max-w-3xl mx-auto mb-16">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-warm-900 dark:text-warm-50 mb-6 text-center">{data.ui.experienceTitle}</h2>
+            <p className="drop-cap text-warm-500 dark:text-warm-400 text-lg leading-relaxed">
               {data.profile.summary}
             </p>
           </div>
@@ -91,7 +92,9 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
           <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
             {data.heroStats.map((stat, index) => (
               <div key={index} className="text-center p-6 rounded-xl bg-warm-50 dark:bg-warm-800 border border-warm-100 dark:border-warm-700">
-                <div className="text-4xl font-serif font-bold text-accent-600 dark:text-accent-400 mb-1">{stat.value}</div>
+                <div className="text-4xl font-serif font-bold text-accent-600 dark:text-accent-400 mb-1">
+                  <AnimatedNumber value={stat.value} />
+                </div>
                 <div className="text-sm text-warm-500 dark:text-warm-400 uppercase tracking-wider font-medium">{stat.label}</div>
               </div>
             ))}
@@ -147,7 +150,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
 
                 <div>
                   <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
-                    <span className="text-sm font-semibold text-accent-600 dark:text-accent-400">{job.period}</span>
+                    <span className="text-sm font-semibold text-accent-600 dark:text-accent-400 tabular-nums">{job.period}</span>
                     <span className="text-sm text-warm-400 dark:text-warm-500">{job.location}</span>
                   </div>
                   <h3 className="text-xl font-bold text-warm-900 dark:text-warm-50 mb-0.5">{job.role}</h3>
@@ -178,7 +181,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
                   <div key={i} className="p-5 rounded-xl bg-warm-800/60 border border-warm-700/50 hover:border-accent-600/40 transition-colors">
                     <div className="font-semibold text-warm-50">{edu.degree}</div>
                     <div className="text-warm-400 text-sm mt-1">{edu.institution}</div>
-                    <div className="text-warm-500 text-xs mt-1">{edu.period}</div>
+                    <div className="text-warm-500 text-xs mt-1 tabular-nums">{edu.period}</div>
                   </div>
                 ))}
               </div>
@@ -238,7 +241,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ data, language }) => {
 
           <div className="text-center mt-12">
             <button
-              onClick={() => navigate('/projects')}
+              onClick={() => navigate('/projects', { viewTransition: true })}
               className="px-6 py-3 bg-warm-900 dark:bg-warm-50 text-white dark:text-warm-900 font-medium rounded-lg hover:bg-warm-800 dark:hover:bg-warm-200 transition-colors inline-flex items-center gap-2"
             >
               {data.ui.viewProjects} <ArrowRightIcon />
