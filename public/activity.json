@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-04-21T06:44:56.847Z",
+  "generatedAt": "2026-04-21T12:29:21.342Z",
   "user": "ferreret",
   "items": [
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
       "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "docs: progress report — verificación desktop y fix sidebar (2026-04-21)",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/c1f11a189772ea3fff9c19b50b3eb46c602421dc",
-      "pushCount": 1,
-      "latestAt": "2026-04-21T06:06:29Z"
+      "latestMessage": "chore(web-frontend): simplificaciones tras review /simplify en v4",
+      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/41bdfb96c2cb0c1dead5968b25bccbeaebaf9792",
+      "pushCount": 2,
+      "latestAt": "2026-04-21T11:10:57Z"
     },
     {
       "repo": "ferreret/docscan",
