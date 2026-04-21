@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-04-21T00:43:34.057Z",
+  "generatedAt": "2026-04-21T06:44:56.847Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/docscan",
+      "repoShort": "docscan",
+      "repoUrl": "https://github.com/ferreret/docscan",
+      "latestMessage": "docs: progress report — verificación desktop y fix sidebar (2026-04-21)",
+      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/c1f11a189772ea3fff9c19b50b3eb46c602421dc",
+      "pushCount": 1,
+      "latestAt": "2026-04-21T06:06:29Z"
+    },
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/0a8d0f5265369efd663b1fbf11f787c11654dd12",
       "pushCount": 1,
       "latestAt": "2026-04-15T16:51:23Z"
-    },
-    {
-      "repo": "ferreret/docscan",
-      "repoShort": "docscan",
-      "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "chore: .gitignore del frontend Vue",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/fb30e1f25d756aea2424b6cc837f0b5279cd1ee4",
-      "pushCount": 5,
-      "latestAt": "2026-04-14T15:30:31Z"
     }
   ]
 }
