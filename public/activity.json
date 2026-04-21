@@ -1,15 +1,24 @@
 {
-  "generatedAt": "2026-04-21T12:29:21.342Z",
+  "generatedAt": "2026-04-21T18:28:47.028Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/modern-conky-dashboard",
+      "repoShort": "modern-conky-dashboard",
+      "repoUrl": "https://github.com/ferreret/modern-conky-dashboard",
+      "latestMessage": "Merge branch 'optimize' into main",
+      "latestCommitUrl": "https://github.com/ferreret/modern-conky-dashboard/commit/6ac6ca94b2e1d0e64239455ea1c61615937aaf1f",
+      "pushCount": 2,
+      "latestAt": "2026-04-21T16:33:23Z"
+    },
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
       "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "chore(web-frontend): simplificaciones tras review /simplify en v4",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/41bdfb96c2cb0c1dead5968b25bccbeaebaf9792",
-      "pushCount": 2,
-      "latestAt": "2026-04-21T11:10:57Z"
+      "latestMessage": "docs: progress report — pestaña Eventos web con on_scan_complete (2026-04-21)",
+      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/4f3cf558d06516e43a0340a3a446c6bbce3595a3",
+      "pushCount": 3,
+      "latestAt": "2026-04-21T14:25:16Z"
     },
     {
       "repo": "ferreret/docscan",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/modern-conky-dashboard/commit/c7a086d1a61ee36d461ac46db7d4e04e0f395d0a",
       "pushCount": 4,
       "latestAt": "2026-04-15T17:05:28Z"
-    },
-    {
-      "repo": "ferreret/docscan",
-      "repoShort": "docscan",
-      "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "docs: guía de prueba manual, bitácora y progreso (2026-04-15)",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/0a8d0f5265369efd663b1fbf11f787c11654dd12",
-      "pushCount": 1,
-      "latestAt": "2026-04-15T16:51:23Z"
     }
   ]
 }
