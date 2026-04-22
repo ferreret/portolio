@@ -1,7 +1,25 @@
 {
-  "generatedAt": "2026-04-22T06:44:40.701Z",
+  "generatedAt": "2026-04-22T12:28:30.891Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/ticket-tracker",
+      "repoShort": "ticket-tracker",
+      "repoUrl": "https://github.com/ferreret/ticket-tracker",
+      "latestMessage": "fix(docker): remapear postgres al 5433 en el host",
+      "latestCommitUrl": "https://github.com/ferreret/ticket-tracker/commit/9e22a5f3352bc3f35570b230671b6f6d07329884",
+      "pushCount": 2,
+      "latestAt": "2026-04-22T11:12:20Z"
+    },
+    {
+      "repo": "ferreret/docscan",
+      "repoShort": "docscan",
+      "repoUrl": "https://github.com/ferreret/docscan",
+      "latestMessage": "chore: ignorar capturas qa-*.png de QA visual con Playwright",
+      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/c9bc36cdcf93151b76bdcb98b07d29d34abb2375",
+      "pushCount": 3,
+      "latestAt": "2026-04-22T11:05:23Z"
+    },
     {
       "repo": "ferreret/modern-conky-dashboard",
       "repoShort": "modern-conky-dashboard",
@@ -37,24 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/83e8a5fd2ae875ac7694091fdcf2ab6986795ec3",
       "pushCount": 1,
       "latestAt": "2026-04-17T13:52:38Z"
-    },
-    {
-      "repo": "ferreret/docscan",
-      "repoShort": "docscan",
-      "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "docs: progress report — brainstorming y plan del editor de pipeline (2026-04-16)",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/3fc5c5869cfe71eb7f89577b76e609c6e0024ac2",
-      "pushCount": 1,
-      "latestAt": "2026-04-16T15:23:21Z"
-    },
-    {
-      "repo": "ferreret/modern-conky-dashboard",
-      "repoShort": "modern-conky-dashboard",
-      "repoUrl": "https://github.com/ferreret/modern-conky-dashboard",
-      "latestMessage": "Fix weather location: hardcode Barcelona, allow override via env",
-      "latestCommitUrl": "https://github.com/ferreret/modern-conky-dashboard/commit/c7a086d1a61ee36d461ac46db7d4e04e0f395d0a",
-      "pushCount": 4,
-      "latestAt": "2026-04-15T17:05:28Z"
     }
   ]
 }
