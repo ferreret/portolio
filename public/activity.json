@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-04-24T06:45:58.710Z",
+  "generatedAt": "2026-04-24T12:28:23.601Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/batch-reactor-reprocess-classifier",
+      "repoShort": "batch-reactor-reprocess-classifier",
+      "repoUrl": "https://github.com/ferreret/batch-reactor-reprocess-classifier",
+      "latestMessage": "docs: registrar Fase T3 (repo público en GitHub) en CHANGELOG",
+      "latestCommitUrl": "https://github.com/ferreret/batch-reactor-reprocess-classifier/commit/879d3e189e37eec6bcb68abc56c4db7e25331ce0",
+      "pushCount": 1,
+      "latestAt": "2026-04-24T11:09:41Z"
+    },
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/4f3cf558d06516e43a0340a3a446c6bbce3595a3",
       "pushCount": 3,
       "latestAt": "2026-04-21T14:25:16Z"
-    },
-    {
-      "repo": "ferreret/docscan",
-      "repoShort": "docscan",
-      "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "docs: progress report — editor de pipeline v3 OcrStep (2026-04-20)",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/b928484677236f4d52d920562e8194c6c88927a3",
-      "pushCount": 3,
-      "latestAt": "2026-04-20T11:55:21Z"
     }
   ]
 }
