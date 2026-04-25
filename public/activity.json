@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-04-25T06:36:46.479Z",
+  "generatedAt": "2026-04-25T12:19:38.015Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/docscan",
+      "repoShort": "docscan",
+      "repoUrl": "https://github.com/ferreret/docscan",
+      "latestMessage": "docs: progress report 2026-04-25 — cierre de follow-ups (v0.1.1 desktop + 2 refactors web)",
+      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/18383f092bfb3b1a889c90b9f51588c73da258f3",
+      "pushCount": 1,
+      "latestAt": "2026-04-25T11:51:03Z"
+    },
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/ticket-tracker/commit/63e20c5411d1930a7cf89a1673f4e2f6ae892f2b",
       "pushCount": 3,
       "latestAt": "2026-04-22T12:54:30Z"
-    },
-    {
-      "repo": "ferreret/modern-conky-dashboard",
-      "repoShort": "modern-conky-dashboard",
-      "repoUrl": "https://github.com/ferreret/modern-conky-dashboard",
-      "latestMessage": "Merge branch 'optimize' into main",
-      "latestCommitUrl": "https://github.com/ferreret/modern-conky-dashboard/commit/6ac6ca94b2e1d0e64239455ea1c61615937aaf1f",
-      "pushCount": 2,
-      "latestAt": "2026-04-21T16:33:23Z"
     }
   ]
 }
