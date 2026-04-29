@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-04-29T06:56:22.386Z",
+  "generatedAt": "2026-04-29T12:39:44.782Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/docscan",
+      "repoShort": "docscan",
+      "repoUrl": "https://github.com/ferreret/docscan",
+      "latestMessage": "feat(web-frontend): auto-refresh del listado mientras hay lotes activos",
+      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/9a385cc3da24b47346e3110fbbbe826e6f6c9a30",
+      "pushCount": 3,
+      "latestAt": "2026-04-29T09:21:45Z"
+    },
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/batch-reactor-reprocess-classifier/commit/81acf9822589619bacfd22383287e344bce7c041",
       "pushCount": 2,
       "latestAt": "2026-04-24T15:17:32Z"
-    },
-    {
-      "repo": "ferreret/docscan",
-      "repoShort": "docscan",
-      "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "docs: progress report 2026-04-23 — Workbench web Fase 3 cerrada",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/d64a7badb49cbc7645a26d5eeac26e5ce06bb5f7",
-      "pushCount": 1,
-      "latestAt": "2026-04-23T19:19:26Z"
     }
   ]
 }
