@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-04-30T06:59:19.531Z",
+  "generatedAt": "2026-04-30T12:39:22.242Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/docscan",
+      "repoShort": "docscan",
+      "repoUrl": "https://github.com/ferreret/docscan",
+      "latestMessage": "docs: anexa auditoría WS, transfer_job e2e y cleanup TestCo al progreso 2026-04-30",
+      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/1d12d2c328a89cde2b323e789fed1a2ce3d03795",
+      "pushCount": 7,
+      "latestAt": "2026-04-30T11:09:36Z"
+    },
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/7dfa9f1b270eba8fe61ea0f384e2bb8338578726",
       "pushCount": 7,
       "latestAt": "2026-04-24T19:20:04Z"
-    },
-    {
-      "repo": "ferreret/batch-reactor-reprocess-classifier",
-      "repoShort": "batch-reactor-reprocess-classifier",
-      "repoUrl": "https://github.com/ferreret/batch-reactor-reprocess-classifier",
-      "latestMessage": "docs: anotar preguntas pendientes para arrancar Fase T4",
-      "latestCommitUrl": "https://github.com/ferreret/batch-reactor-reprocess-classifier/commit/81acf9822589619bacfd22383287e344bce7c041",
-      "pushCount": 2,
-      "latestAt": "2026-04-24T15:17:32Z"
     }
   ]
 }
