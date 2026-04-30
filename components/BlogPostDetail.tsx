@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { Navigate, useParams, useNavigate } from 'react-router-dom';
 import { AppContent } from '@/types';
 import { ArrowLeftIcon } from './Icons';
 
@@ -13,8 +13,7 @@ export const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ data }) => {
   const post = data.blog.find(p => p.id === id);
 
   if (!post) {
-    navigate('/blog', { replace: true });
-    return null;
+    return <Navigate to="/blog" replace />;
   }
 
   return (

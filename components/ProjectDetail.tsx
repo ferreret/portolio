@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { Navigate, useParams, useNavigate } from 'react-router-dom';
 import { AppContent, ProjectStatus } from '@/types';
 import { ArrowLeftIcon } from './Icons';
 
@@ -20,8 +20,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ data }) => {
   const project = data.projects.find(p => p.id === id);
 
   if (!project) {
-    navigate('/projects', { replace: true });
-    return null;
+    return <Navigate to="/projects" replace />;
   }
 
   const cs = data.ui.caseStudy;

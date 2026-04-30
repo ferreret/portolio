@@ -61,6 +61,9 @@ const enContent: AppContent = {
     contactGithubTitle: "GitHub",
     contactGithubDesc: "Browse my public projects and recent activity. The portfolio itself lives here too.",
     contactGithubCta: "Open GitHub",
+    notFoundTitle: "Page not found",
+    notFoundDescription: "The page you're looking for doesn't exist or has been moved.",
+    notFoundCta: "Back to home",
     caseStudy: {
       statusLabel: "Status",
       statusProduction: "In production",
@@ -227,6 +230,9 @@ const esContent: AppContent = {
     contactGithubTitle: "GitHub",
     contactGithubDesc: "Explora mis proyectos públicos y actividad reciente. El propio portfolio vive aquí también.",
     contactGithubCta: "Abrir GitHub",
+    notFoundTitle: "Página no encontrada",
+    notFoundDescription: "La página que buscas no existe o ha sido movida.",
+    notFoundCta: "Volver al inicio",
     caseStudy: {
       statusLabel: "Estado",
       statusProduction: "En producción",

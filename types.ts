@@ -187,6 +187,9 @@ export interface AppContent {
     contactGithubTitle: string;
     contactGithubDesc: string;
     contactGithubCta: string;
+    notFoundTitle: string;
+    notFoundDescription: string;
+    notFoundCta: string;
     caseStudy: {
       statusLabel: string;
       statusProduction: string;

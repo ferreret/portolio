@@ -12,6 +12,7 @@ import { BlogPostDetail } from './components/BlogPostDetail';
 import { ContactSection } from './components/ContactSection';
 import { ScrollProgress } from './components/ScrollProgress';
 import { CVView } from './components/CVView';
+import { NotFound } from './components/NotFound';
 
 type Language = 'en' | 'es';
 type Theme = 'light' | 'dark';
@@ -102,6 +103,7 @@ const App: React.FC = () => {
           <Route path="/blog/:id" element={<BlogPostDetail data={data} />} />
           <Route path="/contact" element={<ContactSection data={data} />} />
           <Route path="/cv" element={<CVView data={data} language={language} />} />
+          <Route path="*" element={<NotFound data={data} />} />
         </Routes>
       </main>
       {!isCV && <Footer data={data} emailCopied={emailCopied} onCopyEmail={copyEmail} />}
