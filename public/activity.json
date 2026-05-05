@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-05-05T06:53:11.445Z",
+  "generatedAt": "2026-05-05T12:35:41.637Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/docscan",
+      "repoShort": "docscan",
+      "repoUrl": "https://github.com/ferreret/docscan",
+      "latestMessage": "docs: progreso 2026-05-05 — bitácora QA cerrada y consolidación a main",
+      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/22b6c095b98c358cd165c686245fa841759c28b7",
+      "pushCount": 7,
+      "latestAt": "2026-05-05T11:52:24Z"
+    },
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/18383f092bfb3b1a889c90b9f51588c73da258f3",
       "pushCount": 1,
       "latestAt": "2026-04-25T11:51:03Z"
-    },
-    {
-      "repo": "ferreret/docscan",
-      "repoShort": "docscan",
-      "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "docs: progress report 2026-04-24 — QA Fase 3 + Fase 4 cerrada",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/7dfa9f1b270eba8fe61ea0f384e2bb8338578726",
-      "pushCount": 7,
-      "latestAt": "2026-04-24T19:20:04Z"
     }
   ]
 }
