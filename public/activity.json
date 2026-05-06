@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-05-06T07:01:42.767Z",
+  "generatedAt": "2026-05-06T12:44:39.929Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/docscan",
+      "repoShort": "docscan",
+      "repoUrl": "https://github.com/ferreret/docscan",
+      "latestMessage": "docs: progreso 2026-05-06 — añade Sesión B (hitos 4-7) cliente local web",
+      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/57759083092f52a8a97168cd5f58cfcb0fde359f",
+      "pushCount": 4,
+      "latestAt": "2026-05-06T11:48:06Z"
+    },
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/fbfd10c41b1cbb13f92a54287685263fc93bf1cc",
       "pushCount": 1,
       "latestAt": "2026-04-27T16:33:44Z"
-    },
-    {
-      "repo": "ferreret/docscan",
-      "repoShort": "docscan",
-      "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "docs: progress report 2026-04-25 — cierre de follow-ups (v0.1.1 desktop + 2 refactors web)",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/18383f092bfb3b1a889c90b9f51588c73da258f3",
-      "pushCount": 1,
-      "latestAt": "2026-04-25T11:51:03Z"
     }
   ]
 }
