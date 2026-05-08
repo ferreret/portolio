@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-05-08T06:42:44.345Z",
+  "generatedAt": "2026-05-08T12:36:00.306Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/docscan",
+      "repoShort": "docscan",
+      "repoUrl": "https://github.com/ferreret/docscan",
+      "latestMessage": "docs: progreso 2026-05-08 — añade hito 11 (transferencia local)",
+      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/d9427fd3fe59a7e7ac6d8f0456f86c65f5fdd6c0",
+      "pushCount": 4,
+      "latestAt": "2026-05-08T12:00:01Z"
+    },
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/8991cbca29d158393a8ee9e0c2d44576e0a32817",
       "pushCount": 13,
       "latestAt": "2026-04-28T16:10:15Z"
-    },
-    {
-      "repo": "ferreret/docscan",
-      "repoShort": "docscan",
-      "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "docs: progress report — ronda QA web (§§ 1-9) y 12 fixes (2026-04-27)",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/fbfd10c41b1cbb13f92a54287685263fc93bf1cc",
-      "pushCount": 1,
-      "latestAt": "2026-04-27T16:33:44Z"
     }
   ]
 }
