@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-05-11T07:21:36.380Z",
+  "generatedAt": "2026-05-11T13:07:52.705Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/docscan",
+      "repoShort": "docscan",
+      "repoUrl": "https://github.com/ferreret/docscan",
+      "latestMessage": "docs: progreso 2026-05-11 — Sprint D, frontend del hito 13 cerrado",
+      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/da87822587265fd3aa427b05aee513e16f5f44d4",
+      "pushCount": 2,
+      "latestAt": "2026-05-11T11:34:42Z"
+    },
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/a6598e760f153b2a7530ed455e338b6ece66fcbe",
       "pushCount": 4,
       "latestAt": "2026-04-29T14:01:21Z"
-    },
-    {
-      "repo": "ferreret/docscan",
-      "repoShort": "docscan",
-      "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "docs: cierre 2026-04-28 — bitácora QA 100% + prep demo + next-up",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/8991cbca29d158393a8ee9e0c2d44576e0a32817",
-      "pushCount": 13,
-      "latestAt": "2026-04-28T16:10:15Z"
     }
   ]
 }
