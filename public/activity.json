@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-05-11T13:07:52.705Z",
+  "generatedAt": "2026-05-11T18:43:33.248Z",
   "user": "ferreret",
   "items": [
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
       "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "docs: progreso 2026-05-11 — Sprint D, frontend del hito 13 cerrado",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/da87822587265fd3aa427b05aee513e16f5f44d4",
-      "pushCount": 2,
-      "latestAt": "2026-05-11T11:34:42Z"
+      "latestMessage": "docs: amplía progreso 2026-05-11 con smoke parcial Canon DR-M160",
+      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/06a65ce415a7d6073759566c1d3b43336bdf3e43",
+      "pushCount": 3,
+      "latestAt": "2026-05-11T14:54:13Z"
     },
     {
       "repo": "ferreret/docscan",
