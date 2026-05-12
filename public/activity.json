@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-05-12T12:48:12.865Z",
+  "generatedAt": "2026-05-12T18:42:09.696Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/SF_DocImporter",
+      "repoShort": "SF_DocImporter",
+      "repoUrl": "https://github.com/ferreret/SF_DocImporter",
+      "latestMessage": "Mejora en conversión segura de fechas desde base de datos",
+      "latestCommitUrl": "https://github.com/ferreret/SF_DocImporter/commit/14d457db3475d7a57267e1ec04f4896168855575",
+      "pushCount": 1,
+      "latestAt": "2026-05-12T14:39:47Z"
+    },
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/d15248de9498a84a08e42e86d3d68ac0e1d6d303",
       "pushCount": 13,
       "latestAt": "2026-04-30T15:35:43Z"
-    },
-    {
-      "repo": "ferreret/docscan",
-      "repoShort": "docscan",
-      "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "chore(web): silencia falsos positivos de ruff en tests ARQ + runners",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/a6598e760f153b2a7530ed455e338b6ece66fcbe",
-      "pushCount": 4,
-      "latestAt": "2026-04-29T14:01:21Z"
     }
   ]
 }
