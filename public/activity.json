@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-05-13T07:09:48.229Z",
+  "generatedAt": "2026-05-13T12:51:10.088Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/SF_DocImporter",
+      "repoShort": "SF_DocImporter",
+      "repoUrl": "https://github.com/ferreret/SF_DocImporter",
+      "latestMessage": "Corregir esquema de hooks en .claude/settings.json",
+      "latestCommitUrl": "https://github.com/ferreret/SF_DocImporter/commit/770830b3c2b54993cbb349b095e0514054abd539",
+      "pushCount": 1,
+      "latestAt": "2026-05-13T12:02:36Z"
+    },
     {
       "repo": "ferreret/SF_DocImporter",
       "repoShort": "SF_DocImporter",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/667e6c22c8d2861a6215813cc47f88adb68dce97",
       "pushCount": 9,
       "latestAt": "2026-05-05T14:48:31Z"
-    },
-    {
-      "repo": "ferreret/docscan",
-      "repoShort": "docscan",
-      "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "docs: cierre del progreso 2026-04-30 con v0.1.2 publicada y resumen final",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/d15248de9498a84a08e42e86d3d68ac0e1d6d303",
-      "pushCount": 13,
-      "latestAt": "2026-04-30T15:35:43Z"
     }
   ]
 }
