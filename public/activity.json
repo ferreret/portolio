@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-05-21T13:15:39.222Z",
+  "generatedAt": "2026-05-21T18:43:30.046Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/SF_DocImporter",
+      "repoShort": "SF_DocImporter",
+      "repoUrl": "https://github.com/ferreret/SF_DocImporter",
+      "latestMessage": "Mostrar versión en título, fix publish con MSBuild de VS y defaults reales",
+      "latestCommitUrl": "https://github.com/ferreret/SF_DocImporter/commit/ff5474af9967b817df03c461885920506ccdf6fe",
+      "pushCount": 1,
+      "latestAt": "2026-05-21T16:21:04Z"
+    },
     {
       "repo": "ferreret/SF_DocImporter",
       "repoShort": "SF_DocImporter",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/57759083092f52a8a97168cd5f58cfcb0fde359f",
       "pushCount": 4,
       "latestAt": "2026-05-06T11:48:06Z"
-    },
-    {
-      "repo": "ferreret/docscan",
-      "repoShort": "docscan",
-      "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "docs: progreso 2026-05-05 — sesión noche sprint superadmin (hitos 7-11)",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/667e6c22c8d2861a6215813cc47f88adb68dce97",
-      "pushCount": 9,
-      "latestAt": "2026-05-05T14:48:31Z"
     }
   ]
 }
