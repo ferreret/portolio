@@ -80,7 +80,11 @@ async function main() {
   const groups = buildGroups(events);
   const items = [];
   for (const group of groups) {
-    items.push(await enrich(group));
+    try {
+      items.push(await enrich(group));
+    } catch (err) {
+      console.warn(`Skipping ${group.repo}@${group.latestHead}: ${err.message}`);
+    }
   }
 
   const payload = {
