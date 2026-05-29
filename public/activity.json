@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-05-29T07:28:04.945Z",
+  "generatedAt": "2026-05-29T13:14:00.872Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/SF_DocImporter",
+      "repoShort": "SF_DocImporter",
+      "repoUrl": "https://github.com/ferreret/SF_DocImporter",
+      "latestMessage": "Subir version de apps WPF a 1.0.3",
+      "latestCommitUrl": "https://github.com/ferreret/SF_DocImporter/commit/1c0b31a9fab1e44c2627721027c46051b9ae7e9f",
+      "pushCount": 2,
+      "latestAt": "2026-05-29T13:07:42Z"
+    },
     {
       "repo": "ferreret/SF_DocImporter",
       "repoShort": "SF_DocImporter",
@@ -46,15 +55,6 @@
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/28f70c5d8c1d666ac382761e30d53dc75fa8aa7f",
       "pushCount": 5,
       "latestAt": "2026-05-08T14:51:25Z"
-    },
-    {
-      "repo": "ferreret/docscan",
-      "repoShort": "docscan",
-      "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "docs: progreso 2026-05-06 — añade Sesión B (hitos 4-7) cliente local web",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/57759083092f52a8a97168cd5f58cfcb0fde359f",
-      "pushCount": 4,
-      "latestAt": "2026-05-06T11:48:06Z"
     }
   ]
 }
