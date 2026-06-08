@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-07T18:32:34.428Z",
+  "generatedAt": "2026-06-08T01:02:07.078Z",
   "user": "ferreret",
   "items": [
     {
@@ -46,15 +46,6 @@
       "latestCommitUrl": "https://github.com/ferreret/docscan/commit/06a65ce415a7d6073759566c1d3b43336bdf3e43",
       "pushCount": 3,
       "latestAt": "2026-05-11T14:54:13Z"
-    },
-    {
-      "repo": "ferreret/docscan",
-      "repoShort": "docscan",
-      "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "docs: progreso 2026-05-08 (cont.) — smoke real hito 12 + plan Sprint D",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/28f70c5d8c1d666ac382761e30d53dc75fa8aa7f",
-      "pushCount": 2,
-      "latestAt": "2026-05-08T14:51:25Z"
     }
   ]
 }
