@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-10T07:36:48.990Z",
+  "generatedAt": "2026-06-10T13:18:18.198Z",
   "user": "ferreret",
   "items": [
     {
@@ -19,33 +19,6 @@
       "latestCommitUrl": "https://github.com/ferreret/SF_DocImporter/commit/ff5474af9967b817df03c461885920506ccdf6fe",
       "pushCount": 1,
       "latestAt": "2026-05-21T16:21:04Z"
-    },
-    {
-      "repo": "ferreret/SF_DocImporter",
-      "repoShort": "SF_DocImporter",
-      "repoUrl": "https://github.com/ferreret/SF_DocImporter",
-      "latestMessage": "Corregir esquema de hooks en .claude/settings.json",
-      "latestCommitUrl": "https://github.com/ferreret/SF_DocImporter/commit/770830b3c2b54993cbb349b095e0514054abd539",
-      "pushCount": 1,
-      "latestAt": "2026-05-13T12:02:36Z"
-    },
-    {
-      "repo": "ferreret/SF_DocImporter",
-      "repoShort": "SF_DocImporter",
-      "repoUrl": "https://github.com/ferreret/SF_DocImporter",
-      "latestMessage": "Mejora en conversión segura de fechas desde base de datos",
-      "latestCommitUrl": "https://github.com/ferreret/SF_DocImporter/commit/14d457db3475d7a57267e1ec04f4896168855575",
-      "pushCount": 1,
-      "latestAt": "2026-05-12T14:39:47Z"
-    },
-    {
-      "repo": "ferreret/docscan",
-      "repoShort": "docscan",
-      "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "docs: amplía progreso 2026-05-11 con smoke parcial Canon DR-M160",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/06a65ce415a7d6073759566c1d3b43336bdf3e43",
-      "pushCount": 3,
-      "latestAt": "2026-05-11T14:54:13Z"
     }
   ]
 }
