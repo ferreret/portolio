@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-20T18:35:29.336Z",
+  "generatedAt": "2026-06-21T01:05:04.972Z",
   "user": "ferreret",
   "items": [
     {
@@ -10,15 +10,6 @@
       "latestCommitUrl": "https://github.com/ferreret/SF_DocImporter/commit/1c0b31a9fab1e44c2627721027c46051b9ae7e9f",
       "pushCount": 2,
       "latestAt": "2026-05-29T13:07:42Z"
-    },
-    {
-      "repo": "ferreret/SF_DocImporter",
-      "repoShort": "SF_DocImporter",
-      "repoUrl": "https://github.com/ferreret/SF_DocImporter",
-      "latestMessage": "Mostrar versión en título, fix publish con MSBuild de VS y defaults reales",
-      "latestCommitUrl": "https://github.com/ferreret/SF_DocImporter/commit/ff5474af9967b817df03c461885920506ccdf6fe",
-      "pushCount": 1,
-      "latestAt": "2026-05-21T16:21:04Z"
     }
   ]
 }
