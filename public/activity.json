@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-07-20T03:17:12.703Z",
+  "generatedAt": "2026-07-20T09:15:05.017Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "Tecnomedia/flexibar-store",
+      "repoShort": "flexibar-store",
+      "repoUrl": "https://github.com/Tecnomedia/flexibar-store",
+      "latestMessage": "Revert de la publicacion de prueba canon-dr-m160-twain-canon300 (smoke del panel de publicacion 2026-07-20)",
+      "latestCommitUrl": "https://github.com/Tecnomedia/flexibar-store/commit/414f2791b2c858582cca02b87046c266984edfbf",
+      "pushCount": 3,
+      "latestAt": "2026-07-20T08:45:26Z"
+    },
     {
       "repo": "Tecnomedia/flexibar-store",
       "repoShort": "flexibar-store",
