@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-07-21T19:23:46.024Z",
+  "generatedAt": "2026-07-22T02:43:29.356Z",
   "user": "ferreret",
   "items": [
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
       "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "chore: ignora venvs auxiliares (.venv*/)",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/e8b2d903442b7885b405261b17c6781d98be5fa8",
-      "pushCount": 3,
-      "latestAt": "2026-07-21T18:54:11Z"
+      "latestMessage": "docs: cierra progreso 2026-07-21 — v0.1.3 publicada + bug portabilidad 3.13",
+      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/81451bedf82620ddd093c72294ff8a1388dbf901",
+      "pushCount": 7,
+      "latestAt": "2026-07-21T21:06:45Z"
     },
     {
       "repo": "Tecnomedia/flexibar-store",
