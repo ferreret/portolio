@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-07-22T02:43:29.356Z",
+  "generatedAt": "2026-07-22T08:30:53.870Z",
   "user": "ferreret",
   "items": [
+    {
+      "repo": "ferreret/docscan",
+      "repoShort": "docscan",
+      "repoUrl": "https://github.com/ferreret/docscan",
+      "latestMessage": "ci: delega el descarte de tests web al conftest",
+      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/e4f84ef2454fd865f4ccbb08e3c264c88a26b499",
+      "pushCount": 1,
+      "latestAt": "2026-07-22T08:30:46Z"
+    },
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
