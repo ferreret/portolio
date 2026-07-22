@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-07-22T08:30:53.870Z",
+  "generatedAt": "2026-07-22T13:56:44.141Z",
   "user": "ferreret",
   "items": [
     {
       "repo": "ferreret/docscan",
       "repoShort": "docscan",
       "repoUrl": "https://github.com/ferreret/docscan",
-      "latestMessage": "ci: delega el descarte de tests web al conftest",
-      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/e4f84ef2454fd865f4ccbb08e3c264c88a26b499",
-      "pushCount": 1,
-      "latestAt": "2026-07-22T08:30:46Z"
+      "latestMessage": "docs: progress report — validación en campo y fix de arranque v0.1.5 (2026-07-22)",
+      "latestCommitUrl": "https://github.com/ferreret/docscan/commit/4b91f97d149a441734eeb03f9565d34bcd94ebe4",
+      "pushCount": 8,
+      "latestAt": "2026-07-22T11:57:57Z"
     },
     {
       "repo": "ferreret/docscan",
