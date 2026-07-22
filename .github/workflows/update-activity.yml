@@ -28,10 +28,16 @@ jobs:
         run: |
           if git diff --quiet public/activity.json; then
             echo "No activity changes."
-            exit 0
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add public/activity.json
+            git commit -m "chore(activity): refresh ticker data"
+            git push
           fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/activity.json
-          git commit -m "chore(activity): refresh ticker data"
-          git push
+
+      - name: Fast-forward production to main
+        # Deploy branch is `production` (Dokploy). Keep it in sync with main so
+        # the ticker refresh actually reaches production. Fails loudly if the
+        # branches ever diverge (non-fast-forward), which is the desired signal.
+        run: git push origin HEAD:production
